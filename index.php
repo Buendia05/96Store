@@ -369,7 +369,7 @@ header nav ul li .children li a{
 }
 
 	</style>
-	<title>96 Store</title>
+	<title>69 Store</title>
 </head>
 <body>
 	<div class="container-fluid">
