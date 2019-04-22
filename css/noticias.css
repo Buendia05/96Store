@@ -1,0 +1,182 @@
+body
+{
+    background-color: #04324C;
+    font-family: Arial;
+}
+main{
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    background: #FFFFFF;
+    padding: 50px;
+    -webkit-box-shadow: 0px 0px 20px -2px black;
+    box-shadow: 0px 0px 20px -2px black;
+    margin-top: 20px;
+    border-radius: 10px;
+    text-align: justify;
+    color: #090909;
+    z-index: -2;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+p
+{
+    font-size: 16px;
+}
+ul
+{
+    font-size: 16px;
+}
+.quienes
+{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.quienes h2
+{
+    text-align: center;
+}
+.quienes h4
+{
+    text-transform: uppercase;
+    color: #02C91E;
+    
+}
+img{
+    clear: both;
+}
+
+.responsive 
+{
+    width: 100%;
+    height: auto;
+   
+}
+hr{
+     border: 2px inset #0560A7;
+}
+/*porta Folio*/
+
+.portafolio-item{
+    float: left;
+    width: 40%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 20px -2px black;
+    box-shadow: 0px 0px 20px -2px black;    
+}
+.portafolio-item1{
+    width: 40%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 20px -2px black;
+    box-shadow: 0px 0px 20px -2px black;    
+    float: right;
+}
+.portafolio-item2{
+    margin-top: 24px;
+    width: 40%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 20px -2px black;
+    box-shadow: 0px 0px 20px -2px black;    
+    float: left;
+}
+.portafolio-item3{
+    margin-top: 24px;
+    width: 40%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 20px -2px black;
+    box-shadow: 0px 0px 20px -2px black;    
+    float: right;
+}
+.portafolio-item4{
+    margin-top: 24px;
+    width: 40%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 20px -2px black;
+    box-shadow: 0px 0px 20px -2px black;    
+    float: left;
+}
+
+.portafolio-img{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+
+}
+.portafolio-text{
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+
+    
+}
+.portafolio-text1{
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+
+    
+}
+
+.portafolio-text p{
+    text-align: justify;
+}
+
+.portafolio-item :hover .portafolio-img{
+    -webkit-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    transform: scale(1.15);
+}
+.portafolio-item1 :hover .portafolio-img{
+    -webkit-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    transform: scale(1.15);
+}
+.portafolio-item2 :hover .portafolio-img{
+    -webkit-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    transform: scale(1.15);
+}
+.portafolio-item2 :hover .portafolio-img{
+    -webkit-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    transform: scale(1.15);
+}
+.portafolio-item3 :hover .portafolio-img{
+    -webkit-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    transform: scale(1.15);
+}
+.portafolio-item4 :hover .portafolio-img{
+    -webkit-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    transform: scale(1.15);
+}

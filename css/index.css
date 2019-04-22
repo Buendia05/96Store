@@ -1,0 +1,33 @@
+.header{
+	width: 100%;
+	height: 100px;
+}
+.contimg{
+	width: 90px;
+	height: 90px;
+	margin-left: 10px;
+}
+.menuflotant{
+	float: right;
+	display:block;
+	margin-bottom: 30px;
+}
+
+.bloqueizquierdo{
+			background-color: green; 
+			height: 100px;
+		}
+		.logo{
+			max-width: 100%; 
+			height: 100px;
+		}
+		.bloquecentro{
+			background-color: yellow; 
+			height: 100px
+		}
+		.bloquederecho{
+
+		}
+
+
+

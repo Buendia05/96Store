@@ -1,0 +1,97 @@
+<?php
+include "configs/config.php";
+include "configs/funciones.php";
+	
+if(!isset($p)){
+	$p = "principal";
+}else{
+	$p = $p;
+}
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="css/estilo.css"/>
+	
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
+	<link rel="stylesheet" href="fontawesome/css/all.css"/>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="fontawesome/js/all.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<!-- slider -->
+	<link rel="stylesheet" href="css/nivo-slider.css">
+	<link rel="stylesheet" href="css/mi-slider.css">
+
+	<!-- slider2  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+	<!-- sliderfin2 -->
+	<script src="js/jquery.nivo.slider.js"></script>
+
+	<script type="text/javascript"> 
+		$(window).on('load', function() {
+		    $('#slider').nivoSlider(); 
+		}); 
+	</script>
+	<title>Tienda Online</title>
+</head>
+<body>
+
+	<div class="header">
+		<div class="contimg">
+			<img class="imagen" src="multimedia/img/logo1.png" alt="">
+		</div>
+		<div class="supernaveg">
+		<a href="?p=principal">TU TIENDA</a>
+		<a href="?p=productos">JUEGOS</a>
+		<a href="?p=ofertas">NOTICIAS</a>
+		<a href="?p=carrito">ACERCA DE</a>
+		<a href="?p=admin">SOPORTE</a>
+		<a href="?p=biblioteca">BIBLIOTECA</a>
+		</div>
+		<div class="menuflotant">
+			<a href="">Iniciar seccion</a>
+			<a href="">Carrito</a>
+		</div>
+		<?php
+			if(isset($_SESSION['id_cliente'])){
+		?>
+
+		<a class="pull-right subir" href="?p=salir">Salir</a>
+		<a class="pull-right subir" href="#"><?=nombre_cliente($_SESSION['id_cliente'])?></a>
+
+		<?php
+			}
+		?>
+	</div>
+	<div class="cuerpo">
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+	
+	
+		<?php
+			if(file_exists("modulos/".$p.".php")){
+				include "modulos/".$p.".php";
+			}else{
+				echo "<i>No se ha encontrado el modulo <b>".$p."</b> <a href='./'>Regresar</a></i>";
+			}
+		?> 
+	</div>
+
+	<div class="footer">
+		Copyright AnySlehider &copy; <?=date("Y")?>
+	</div>
+
+</body>
+</html>
