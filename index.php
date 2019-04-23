@@ -409,7 +409,7 @@ header nav ul li .children li a{
 							<li><a href="#"><span></span>BIBLIOTECA</a></li>
 							<li><a href="?p=noticias"><span></span>NOTICIAS</a></li>
 							<li><a href="?p=reseñas"><span></span>RESEÑAS</a></li>
-							<li><a href="#"><span></span>ACERCA DE</a></li>
+							<li><a href="?p=acercade"><span></span>ACERCA DE</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -438,7 +438,7 @@ header nav ul li .children li a{
 							<li><a href="#"><span></span>BIBLIOTECA</a></li>
 							<li><a href="?p=noticias"><span></span>NOTICIAS</a></li>
 							<li><a href="?p=reseñas"><span></span>RESEÑAS</a></li>
-							<li><a href="#"><span></span>ACERCA DE</a></li>
+							<li><a href="?p=acercade"><span></span>ACERCA DE</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -574,22 +574,22 @@ header nav ul li .children li a{
 				</div>
 				<div class="footer2 row" style="padding-top: 5px;">
 					<div class="us col-xs-2" style="background-color: olive; height: 25px; padding-top: 5px; border-right: 1px solid #fff; text-align: right;">
-						<span><a href="#" style="color: #fff;">ACERCA DE</a></span>
+						<span><a href="?p=acercade" style="color: #fff;">ACERCA DE</a></span>
 					</div>
 					<div class="fb col-xs-2" style="background-color: skyblue;  height: 25px; padding-top: 5px; border-right: 1px solid #fff; text-align: right;">
-						<a href="#"><span class="icon-facebook2" style="color: blue;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
+						<a href="https://www.facebook.com/"><span class="icon-facebook2" style="color: blue;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
 					</div>
 					<div class="in col-xs-2" style="background-color: pink;  height: 25px; padding-top: 5px; border-right: 1px solid #fff; text-align: right;">
-						<a href="#"><span class="icon-instagram" style="color: #fff;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
+						<a href="https://www.instagram.com/"><span class="icon-instagram" style="color: #fff;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
 					</div>
 					<div class="tw col-xs-2" style="background-color: gray;  height: 25px; padding-top: 5px; border-right: 1px solid #fff; text-align: right;">
-						<a href="#"><span class="icon-twitter" style="color: skyblue;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
+						<a href="https://twitter.com/?lang=es"><span class="icon-twitter" style="color: skyblue;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
 					</div>
 					<div class="yt col-xs-2" style="background-color: skyblue;  height: 25px; padding-top: 5px; border-right: 1px solid #fff; text-align: right;">
-						<a href="#"><span class="icon-youtube" style="color: red;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
+						<a href="https://www.youtube.com/"><span class="icon-youtube" style="color: red;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
 					</div>
 					<div class="pi col-xs-2" style="background-color: pink;  height: 25px; padding-top: 5px; text-align: right;">
-						<a href="#"><span class="icon-pinterest" style="color: orange;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
+						<a href="https://www.pinterest.es/"><span class="icon-pinterest" style="color: orange;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
 					</div>
 				</div>
 			</div>

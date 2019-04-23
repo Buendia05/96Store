@@ -30,8 +30,8 @@ if(isset($finalizar)){
 
 }
 ?>
-
-<h1><i class="fa fa-shopping-cart"></i> Carro de Compras</h1>
+<div class="row" style="font-family: 'Orbitron','Arial';">
+<h1 style="font-size: 25px; color: #fff;"><i class="fa fa-shopping-cart"></i> Carro de Compras</h1>
 <br><br>
 
 <table class="table table-striped">
@@ -80,3 +80,4 @@ while($r = mysqli_fetch_array($q)){
 	<input type="hidden" name="monto_total" value="<?=$monto_total?>"/>
 	<button class="btn btn-primary" type="submit" name="finalizar"><i class="fa fa-check"></i> Finalizar Compra</button>
 </form>
+</div>

@@ -2,7 +2,7 @@
 if(isset($_SESSION['id_cliente'])){
 	redir("./");
 }
-	
+
 if(isset($enviar)){
 	$username = clear($username);
 	$password = clear($password);
@@ -21,22 +21,26 @@ if(isset($enviar)){
 		alert("Los datos no son validos");
 		redir("?p=login");
 	}
-
-
 }
 	?>
 
-
+<div class="row" style="font-family: 'Orbitron','Arial';">
 	<center>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:20px;">
+			<center>
+			<img class="img-fluid mx-auto d-block " src="multimedia/img/logo1.png" style="max-width: 100%; height: 150px; border-radius: 10px;">
+		</center>
+		</div>
 		<form method="post" action="">
 			<div class="centrar_login">
-				<label><h2><i class="fa fa-key"></i> Iniciar Sesión</h2></label>
+				<label style="font-size: 25px; color: #fff;"><h2><i class="fa fa-key"></i> Iniciar Sesión</h2></label>
+				<br><br>
 				<div class="form-group">
-					<input type="text" autocomplete="off" class="form-control" placeholder="Usuario" name="username"/>
+					<input type="text" autocomplete="off" class="form-control" placeholder="Usuario" name="username" style="font-style: italic;"/>
 				</div>
 
 				<div class="form-group">
-					<input type="password" class="form-control" placeholder="Contraseña" name="password"/>
+					<input type="password" class="form-control" placeholder="Contraseña" name="password" style="font-style: italic;"/>
 				</div>
 
 				<div class="form-group">
@@ -45,3 +49,4 @@ if(isset($enviar)){
 			</div>
 		</form>
 	</center>
+</div>
