@@ -24,7 +24,7 @@
     <div  style="font-family: 'Orbitron','Arial';" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <center>
         <ul class="pagination">
-      <li><a href="?p=reseñas1">&laquo;</a></li>
+      <li><a href="?p=reseñas">&laquo;</a></li>
       <li><a href="?p=reseñas">1</a></li>
       <li class="active"><span>2<span class="sr-only">(página actual)</span></span></li>
       <li><a href="?p=reseñas3">3</a></li>
