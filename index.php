@@ -363,17 +363,31 @@ header nav ul li .children li a{
 			padding-top: 15px;
 		}
 		.cajabuscar{
-			display: none;
+			display: block;
+			float: right;
+			top: -50px;
+			max-height: 50px;
 		}
-
+		.cajabuscar .form-inline{
+			margin-top: -13px;
+			float: right;
+		}
+		.cuerpo{
+			margin-top: -50px;
+		}
+		.asideizq{
+			margin-top: -50px;
+		}
+		.barra1{
+			font-size: 14px;
+		}
 }
 
 	</style>
-	<title>69 Store</title>
+	<title>96 Store</title>
 </head>
 <body>
 	<div class="container-fluid">
-
 			<div class="menu_bar col-xs-12 col-sm-12">
 				<div class="row">
 				<div class="bt-inicio col-xs-2"><a href="#" class="bt-menu"><span class="icon-list2"></span></a></div>
@@ -445,18 +459,17 @@ header nav ul li .children li a{
 			</div>
 			<div class="bloquederecho col-xs-12 col-sm-12 col-md-12 col-lg-2">
 			<div class="row">
-				<div class="cajacarrito col-xs-12" style="background-color: blue; height: 25px;">
+				<div class="cajacarrito col-xs-6 col-sm-6 col-md-6 col-lg-12" style="background-color: blue; height: 25px;">
 					<span class="sesion float-left icon-users" style="color: #fff;">
 						<a href="?p=productos" style="font-family: 'Orbitron'; font-size: 10px; color: #fff;">Iniciar Sesi&oacute;n</a>
 					</span>
 					<span class="cart icon-shopcart float-right" style="color: #fff;">
 						<a href="?p=carrito" style="font-family: 'Orbitron'; font-size: 10px; color: #fff;">Carrito</a>
 					</span>
-
 				</div>
 			</div>
 			<div class="row">
-				<div class="cajabuscar col-xs-12" style="background-color: black; height: 75px;">
+				<div class="cajabuscar col-xs-6 col-sm-6 col-md-6 col-lg-12" style="background-color: black; height: 75px;">
 					<div class="row">
 					<div class="navbar navbar-expand-sm bg-dark navbar-dark col-lg-12" style="padding-top:20px;">
 					<form class="form-inline" action="/action_page.php">
@@ -485,7 +498,7 @@ header nav ul li .children li a{
 	</div>
 	<div class="container-fluid" style="margin-top:30px;">
 		<div class="row">
-	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="background-color: blue;">
+	<div class="asideizq col-lg-2 col-md-2 col-sm-2 col-xs-2" style="background-color: blue;">
 	<div class="barra1">
     <hr>
 		<a class="lis" href="">Recomedados</a>
