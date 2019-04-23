@@ -260,7 +260,7 @@ header nav ul li .children li a{
 	border-radius: 10px;
 	-webkit-box-shadow: 0px 0px 20px -2px #FFFFFF;
     box-shadow: 0px 0px 20px -2px #FFFFFF;
-
+		font-family: 'Orbitron','Arial';
 }
 
 .barra1 .lis{
@@ -380,10 +380,8 @@ header nav ul li .children li a{
 				<div class="bt-buscar col-xs-6 col-sm-6">
 					<div class="navbar navbar-expand-sm bg-dark navbar-dark" style="float: center; padding-top:5px;">
 					<form class="form-inline" action="/action_page.php">
-
-						<input class="form-control mr-sm-2 col-xs-1" type="text" placeholder="Buscar" style="width: 100px; height:60px; margin-left: 50px; position: relative;">
+						<input class="form-control mr-sm-2 col-xs-1" type="text" placeholder="Buscar" style="font-family: 'Orbitron','Arial'; font-style: italic; width: 100px; height:60px; margin-left: 50px; position: relative;">
 						<button class="btn btn-success col-xs-1" type="submit" style="height:60px; width: 75px; background-color: blue;"><span class="icon-search" style="font-size: 50px;"></span></button>
-
 					</form>
 				</div>
 				</div>
@@ -454,11 +452,19 @@ header nav ul li .children li a{
 					<span class="cart icon-shopcart float-right" style="color: #fff;">
 						<a href="?p=carrito" style="font-family: 'Orbitron'; font-size: 10px; color: #fff;">Carrito</a>
 					</span>
+
 				</div>
 			</div>
 			<div class="row">
 				<div class="cajabuscar col-xs-12" style="background-color: black; height: 75px;">
-
+					<div class="row">
+					<div class="navbar navbar-expand-sm bg-dark navbar-dark col-lg-12" style="padding-top:20px;">
+					<form class="form-inline" action="/action_page.php">
+						<input class="form-control mr-sm-2" type="text" placeholder="Buscar" style="font-family: 'Orbitron','Arial'; font-style: italic; width: 100px; height:35px; margin-left: 20px; position: relative;">
+						<button class="btn btn-success" type="submit" style="height:35px; width: 35px; background-color: blue;"><span class="icon-search" style="font-size: 25px; margin-left: -8px;"></span></button>
+					</form>
+				</div>
+				</div>
 				</div>
 			</div>
 			</div>
