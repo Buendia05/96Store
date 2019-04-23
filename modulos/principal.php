@@ -1,8 +1,9 @@
-<body>
 	<div class="row">
+		<div class="row" style="margin-bottom: 50px; padding: 40px;">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<div class="contenedorslider1">
-  <h2 style="font-family: 'Orbitron'; color: white; font-size: 20px;">DESTACADOS</h2>
+			<!-- slide destacados -->
+<div class="contenedorslider1 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  <h2 style="font-family: 'Orbitron'; color: white; font-size: 25px;">DESTACADOS</h2>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -38,11 +39,13 @@
   </div>
 </div>
 </div>
-<div class="row">
+</div>
+<!-- slide promociones -->
+<div class="row" style="margin-bottom: 50px; padding: 40px;">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-	<div class="contendor2" style="width: 100%;">
+	<div class="contendor2 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="width: 100%;">
 	<div class="swiper-container main-slider loading" style="height:700px;">
-		<label for="" style="font-family: 'Orbitron'; color: white; font-size:20px; padding-bottom:15px">PROMOCIONES
+		<label for="" style="font-family: 'Orbitron'; color: white; font-size:25px; padding-bottom:15px">PROMOCIONES
     </label>
   <div class="swiper-wrapper">
     <div class="swiper-slide">
@@ -144,11 +147,12 @@
 </div>
 </div>
 </div>
+</div>
 <!-- contenedor gameplay -->
-	<div class="row">
-		<h2 style="font-family: 'Orbitron'; color: white; font-size:20px; text-align: center;">GAMEPLAYS
+	<div class="row" style="margin-bottom: 50px; padding: 40px;">
+		<h2 style="font-family: 'Orbitron'; color: white; font-size:25px;">GAMEPLAYS
 		</h2>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="cp_widget_81567dbd-9e96-47d2-979b-fe76d768dcef">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 70px;" id="cp_widget_81567dbd-9e96-47d2-979b-fe76d768dcef">
 		</div>
 		<script type="text/javascript">
 var cpo = []; cpo["_object"] ="cp_widget_81567dbd-9e96-47d2-979b-fe76d768dcef"; cpo["_fid"] = "AAEAVdOrbuWB";

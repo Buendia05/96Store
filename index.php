@@ -260,7 +260,7 @@ header nav ul li .children li a{
 	border-radius: 10px;
 	-webkit-box-shadow: 0px 0px 20px -2px #FFFFFF;
     box-shadow: 0px 0px 20px -2px #FFFFFF;
-
+		font-family: 'Orbitron','Arial';
 }
 
 .barra1 .lis{
@@ -363,9 +363,24 @@ header nav ul li .children li a{
 			padding-top: 15px;
 		}
 		.cajabuscar{
-			display: none;
+			display: block;
+			float: right;
+			top: -50px;
+			max-height: 50px;
 		}
-
+		.cajabuscar .form-inline{
+			margin-top: -13px;
+			float: right;
+		}
+		.cuerpo{
+			margin-top: -50px;
+		}
+		.asideizq{
+			margin-top: -50px;
+		}
+		.barra1{
+			font-size: 14px;
+		}
 }
 
 	</style>
@@ -373,17 +388,14 @@ header nav ul li .children li a{
 </head>
 <body>
 	<div class="container-fluid">
-
 			<div class="menu_bar col-xs-12 col-sm-12">
 				<div class="row">
 				<div class="bt-inicio col-xs-2"><a href="#" class="bt-menu"><span class="icon-list2"></span></a></div>
 				<div class="bt-buscar col-xs-6 col-sm-6">
 					<div class="navbar navbar-expand-sm bg-dark navbar-dark" style="float: center; padding-top:5px;">
 					<form class="form-inline" action="/action_page.php">
-
-						<input class="form-control mr-sm-2 col-xs-1" type="text" placeholder="Buscar" style="width: 100px; height:60px; margin-left: 50px; position: relative;">
+						<input class="form-control mr-sm-2 col-xs-1" type="text" placeholder="Buscar" style="font-family: 'Orbitron','Arial'; font-style: italic; width: 100px; height:60px; margin-left: 50px; position: relative;">
 						<button class="btn btn-success col-xs-1" type="submit" style="height:60px; width: 75px; background-color: blue;"><span class="icon-search" style="font-size: 50px;"></span></button>
-
 					</form>
 				</div>
 				</div>
@@ -411,7 +423,7 @@ header nav ul li .children li a{
 							<li><a href="#"><span></span>BIBLIOTECA</a></li>
 							<li><a href="?p=noticias"><span></span>NOTICIAS</a></li>
 							<li><a href="?p=reseñas"><span></span>RESEÑAS</a></li>
-							<li><a href="#"><span></span>ACERCA DE</a></li>
+							<li><a href="?p=acercade"><span></span>ACERCA DE</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -440,14 +452,14 @@ header nav ul li .children li a{
 							<li><a href="#"><span></span>BIBLIOTECA</a></li>
 							<li><a href="?p=noticias"><span></span>NOTICIAS</a></li>
 							<li><a href="?p=reseñas"><span></span>RESEÑAS</a></li>
-							<li><a href="#"><span></span>ACERCA DE</a></li>
+							<li><a href="?p=acercade"><span></span>ACERCA DE</a></li>
 						</ul>
 					</nav>
 				</header>
 			</div>
 			<div class="bloquederecho col-xs-12 col-sm-12 col-md-12 col-lg-2">
 			<div class="row">
-				<div class="cajacarrito col-xs-12" style="background-color: blue; height: 25px;">
+				<div class="cajacarrito col-xs-6 col-sm-6 col-md-6 col-lg-12" style="background-color: blue; height: 25px;">
 					<span class="sesion float-left icon-users" style="color: #fff;">
 						<a href="?p=productos" style="font-family: 'Orbitron'; font-size: 10px; color: #fff;">Iniciar Sesi&oacute;n</a>
 					</span>
@@ -457,8 +469,15 @@ header nav ul li .children li a{
 				</div>
 			</div>
 			<div class="row">
-				<div class="cajabuscar col-xs-12" style="background-color: black; height: 75px;">
-
+				<div class="cajabuscar col-xs-6 col-sm-6 col-md-6 col-lg-12" style="background-color: black; height: 75px;">
+					<div class="row">
+					<div class="navbar navbar-expand-sm bg-dark navbar-dark col-lg-12" style="padding-top:20px;">
+					<form class="form-inline" action="/action_page.php">
+						<input class="form-control mr-sm-2" type="text" placeholder="Buscar" style="font-family: 'Orbitron','Arial'; font-style: italic; width: 100px; height:35px; margin-left: 20px; position: relative;">
+						<button class="btn btn-success" type="submit" style="height:35px; width: 35px; background-color: blue;"><span class="icon-search" style="font-size: 25px; margin-left: -8px;"></span></button>
+					</form>
+				</div>
+				</div>
 				</div>
 			</div>
 			</div>
@@ -479,7 +498,7 @@ header nav ul li .children li a{
 	</div>
 	<div class="container-fluid" style="margin-top:30px;">
 		<div class="row">
-	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="background-color: blue;">
+	<div class="asideizq col-lg-2 col-md-2 col-sm-2 col-xs-2" style="background-color: blue;">
 	<div class="barra1">
     <hr>
 		<a class="lis" href="">Recomedados</a>
@@ -568,22 +587,22 @@ header nav ul li .children li a{
 				</div>
 				<div class="footer2 row" style="padding-top: 5px;">
 					<div class="us col-xs-2" style="background-color: olive; height: 25px; padding-top: 5px; border-right: 1px solid #fff; text-align: right;">
-						<span><a href="#" style="color: #fff;">ACERCA DE</a></span>
+						<span><a href="?p=acercade" style="color: #fff;">ACERCA DE</a></span>
 					</div>
 					<div class="fb col-xs-2" style="background-color: skyblue;  height: 25px; padding-top: 5px; border-right: 1px solid #fff; text-align: right;">
-						<a href="#"><span class="icon-facebook2" style="color: blue;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
+						<a href="https://www.facebook.com/"><span class="icon-facebook2" style="color: blue;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
 					</div>
 					<div class="in col-xs-2" style="background-color: pink;  height: 25px; padding-top: 5px; border-right: 1px solid #fff; text-align: right;">
-						<a href="#"><span class="icon-instagram" style="color: #fff;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
+						<a href="https://www.instagram.com/"><span class="icon-instagram" style="color: #fff;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
 					</div>
 					<div class="tw col-xs-2" style="background-color: gray;  height: 25px; padding-top: 5px; border-right: 1px solid #fff; text-align: right;">
-						<a href="#"><span class="icon-twitter" style="color: skyblue;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
+						<a href="https://twitter.com/?lang=es"><span class="icon-twitter" style="color: skyblue;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
 					</div>
 					<div class="yt col-xs-2" style="background-color: skyblue;  height: 25px; padding-top: 5px; border-right: 1px solid #fff; text-align: right;">
-						<a href="#"><span class="icon-youtube" style="color: red;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
+						<a href="https://www.youtube.com/"><span class="icon-youtube" style="color: red;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
 					</div>
 					<div class="pi col-xs-2" style="background-color: pink;  height: 25px; padding-top: 5px; text-align: right;">
-						<a href="#"><span class="icon-pinterest" style="color: orange;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
+						<a href="https://www.pinterest.es/"><span class="icon-pinterest" style="color: orange;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
 					</div>
 				</div>
 			</div>
