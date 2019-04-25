@@ -381,6 +381,9 @@ header nav ul li .children li a{
 		.barra1{
 			font-size: 14px;
 		}
+		.footer2 .fb > i{
+			display: /* BUG:  */;
+		}
 }
 
 	</style>
@@ -412,7 +415,7 @@ header nav ul li .children li a{
 							<li class="submenu">
 								<a href="#"><span></span>JUEGOS <span class="caret circle-down"></span></a>
 								<ul class="children">
-									<li><a href="?p=productos">Free to Play<span></span></a></li>
+									<li><a href="?p=gtav">Free to Play<span></span></a></li>
 									<li><a href="#">Accion<span></span></a></li>
 									<li><a href="#">Casual<span></span></a></li>
 									<li><a href="#">Aventura<span></span></a></li>
@@ -441,7 +444,7 @@ header nav ul li .children li a{
 							<li class="submenu">
 								<a href="#"><span></span>JUEGOS <span class="caret circle-down"></span></a>
 								<ul class="children">
-									<li><a href="?p=productos">Free to Play<span></span></a></li>
+									<li><a href="?p=gtav">Free to Play<span></span></a></li>
 									<li><a href="#">Accion<span></span></a></li>
 									<li><a href="#">Casual<span></span></a></li>
 									<li><a href="#">Aventura<span></span></a></li>
