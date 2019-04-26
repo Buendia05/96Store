@@ -1,5 +1,5 @@
 <?php
-	
+
 if(isset($enviar)){
 	$username = clear($username);
 	$password = clear($password);
@@ -9,6 +9,7 @@ if(isset($enviar)){
 	if(mysqli_num_rows($q)>0){
 		$r = mysqli_fetch_array($q);
 		$_SESSION['id'] = $r['id'];
+		alert("¡Bienvenid@ Administrador!");
 		redir("?p=admin");
 	}else{
 		alert("Los datos no son validos");
@@ -20,21 +21,24 @@ if(isset($enviar)){
 
 if(isset($_SESSION['id'])){ // si hay una sesion iniciada
 	?>
-	<a href="?p=agregar_producto">
+	<a href="?p=agregar_producto" style="font-family: 'Orbitron','Arial'; color: #fff;">
 		<button class="btn btn-primary"><i class="fa fa-plus-circle"></i> Agregar Productos</button></a>
 
-		<a href="?p=agregar_categoria">
+		<a href="?p=agregar_categoria" style="font-family: 'Orbitron','Arial'; color: #fff;">
 		<button class="btn btn-info"><i class="fa fa-plus-circle"></i> Agregar Categoria</button></a>
 
-		<a href="?p=manejar_tracking">
+		<a href="?p=manejar_tracking" style="font-family: 'Orbitron','Arial'; color: #fff;">
 		<button class="btn btn-warning"><i class="fa fa-plus-circle"></i> Manejar Tracking</button></a>
 	<?php
 }else{ // si no hay una sesion iniciada
 	?>
 	<center>
-		<form method="post" action="">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<img src="multimedia/img/logo1.png" alt="" style="width:200px; height:200px;">
+		</div>
+		<form method="post" action="" style="font-family: 'Orbitron','Arial'; color: #fff;">
 			<div class="centrar_login">
-				<label><h2><i class="fa fa-key"></i> Iniciar Sesión Como Administrador</h2></label>
+				<label><h2><i class="fa fa-key"></i> Iniciar Sesión Como Administrador</h2></label><br><br>
 				<div class="form-group">
 					<input type="text" class="form-control" placeholder="Usuario" name="username"/>
 				</div>

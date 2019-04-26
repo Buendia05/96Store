@@ -2,7 +2,7 @@
 if(isset($_SESSION['id_cliente'])){
 	redir("./");
 }
-	
+
 if(isset($enviar)){
 	$username = clear($username);
 	$password = clear($password);
@@ -13,9 +13,12 @@ if(isset($enviar)){
 		$r = mysqli_fetch_array($q);
 		$_SESSION['id_cliente'] = $r['id'];
 		if(isset($return)){
+			alert("¡Bienvenid@!");
 			redir("?p=".$return);
 		}else{
+
 			redir("./");
+
 		}
 	}else{
 		alert("Los datos no son validos");
@@ -28,9 +31,12 @@ if(isset($enviar)){
 
 
 	<center>
-		<form method="post" action="">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<img src="multimedia/img/logo1.png" alt="" style="width:200px; height:200px;">
+		</div>
+		<form method="post" action="" style="font-family: 'Orbitron','Arial'; color: #fff;">
 			<div class="centrar_login">
-				<label><h2><i class="fa fa-key"></i> Iniciar Sesión</h2></label>
+				<label><h2><i class="fa fa-key"></i> Iniciar Sesión</h2></label><br><br>
 				<div class="form-group">
 					<input type="text" autocomplete="off" class="form-control" placeholder="Usuario" name="username"/>
 				</div>

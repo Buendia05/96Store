@@ -563,7 +563,7 @@ header nav ul li .children li a{
 				<div class="col-xs-12">
 					<center style="font-family: Orbitron, Arial">
 						Inicia sesión para unirte a nuestra comunidad<br><br>
-						<button class="btn btn-primary">Iniciar sesión</button><br><br>
+						<a href="?p=login"><button class="btn btn-primary">Iniciar sesión</button></a><br><br>
 						o <b><a href="#">regístrate</a> y únete a 96Store de forma gratuita</b>
 					</center>
 				</div>
