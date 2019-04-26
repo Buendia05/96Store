@@ -413,7 +413,7 @@ header nav ul li .children li a{
 						<ul>
 							<li><a href="?p=principal"><span></span>TU TIENDA</a></li>
 							<li class="submenu">
-								<a href="#"><span></span>JUEGOS <span class="caret circle-down"></span></a>
+								<a href="?p=agregar_producto"><span></span>JUEGOS <span class="caret circle-down"></span></a>
 								<ul class="children">
 									<li><a href="?p=gtav">Free to Play<span></span></a></li>
 									<li><a href="#">Accion<span></span></a></li>
@@ -442,7 +442,7 @@ header nav ul li .children li a{
 						<ul>
 							<li><a href="?p=principal"><span></span>TU TIENDA</a></li>
 							<li class="submenu">
-								<a href="#"><span></span>JUEGOS <span class="caret circle-down"></span></a>
+								<a href="?p=agregar_producto"><span></span>JUEGOS <span class="caret circle-down"></span></a>
 								<ul class="children">
 									<li><a href="?p=gtav">Free to Play<span></span></a></li>
 									<li><a href="#">Accion<span></span></a></li>
