@@ -411,12 +411,12 @@ header nav ul li .children li a{
 			<header>
 					<nav class="menu">
 						<ul>
-							<li><a href="?p=principal"><span></span>TU TIENDA</a></li>
+							<li><a href="?p=home"><span></span>TU TIENDA</a></li>
 							<li class="submenu">
-								<a href="?p=agregar_producto"><span></span>JUEGOS <span class="caret circle-down"></span></a>
+								<a href="#"><span></span>JUEGOS <span class="caret circle-down"></span></a>
 								<ul class="children">
-									<li><a href="?p=gtav">Free to Play<span></span></a></li>
-									<li><a href="#">Accion<span></span></a></li>
+									<li><a href="#">Free to Play<span></span></a></li>
+									<li><a href="?p=gtav">Accion<span></span></a></li>
 									<li><a href="#">Casual<span></span></a></li>
 									<li><a href="#">Aventura<span></span></a></li>
 									<li><a href="#">Deportes<span></span></a></li>
@@ -440,12 +440,12 @@ header nav ul li .children li a{
 				<header>
 					<nav class="menu">
 						<ul>
-							<li><a href="?p=principal"><span></span>TU TIENDA</a></li>
+							<li><a href="?p=home"><span></span>TU TIENDA</a></li>
 							<li class="submenu">
-								<a href="?p=agregar_producto"><span></span>JUEGOS <span class="caret circle-down"></span></a>
+								<a href="#"><span></span>JUEGOS <span class="caret circle-down"></span></a>
 								<ul class="children">
-									<li><a href="?p=gtav">Free to Play<span></span></a></li>
-									<li><a href="#">Accion<span></span></a></li>
+									<li><a href="#">Free to Play<span></span></a></li>
+									<li><a href="?p=gtav">Accion<span></span></a></li>
 									<li><a href="#">Casual<span></span></a></li>
 									<li><a href="#">Aventura<span></span></a></li>
 									<li><a href="#">Deportes<span></span></a></li>
@@ -504,11 +504,11 @@ header nav ul li .children li a{
 	<div class="asideizq col-lg-2 col-md-2 col-sm-2 col-xs-2" style="background-color: blue;">
 	<div class="barra1">
     <hr>
-		<a class="lis" href="">Recomedados</a>
+		<a class="lis" href="?p=admin">Mantenimiento</a>
     <hr>
-		<a class="lis" href="">Explorar Categorias</a>
+		<a class="lis" href="?p=productos">Explorar Categorias</a>
     <hr>
-		<a  href="">Los mas vendido</a>
+		<a href="">Los mas vendido</a>
 		<a href="">Actualizaciones recientemente</a>
 		<a href="">Novedades</a>
 		<a href="">Proximamente</a>
