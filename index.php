@@ -507,6 +507,8 @@ header nav ul li .children li a{
 	<div class="barra1">
     <hr>
 		<a class="lis" href="?p=admin">Mantenimiento</a>
+		<br>
+		<a class="lis" href="?p=frm_admin">Registro Admin</a>
     <hr>
 		<a class="lis" href="?p=productos">Explorar Categorias</a>
     <hr>
@@ -566,7 +568,7 @@ header nav ul li .children li a{
 					<center style="font-family: Orbitron, Arial">
 						Inicia sesión para unirte a nuestra comunidad<br><br>
 						<a href="?p=login"><button class="btn btn-primary">Iniciar sesión</button></a><br><br>
-						o <b><a href="#">regístrate</a> y únete a 96Store de forma gratuita</b>
+						o <b><a href="?p=frm_cliente">regístrate</a> y únete a 96Store de forma gratuita</b>
 					</center>
 				</div>
 			</div>
