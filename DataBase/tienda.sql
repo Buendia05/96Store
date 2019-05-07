@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-04-2019 a las 06:58:15
+-- Tiempo de generación: 29-04-2019 a las 02:57:28
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.1.26
 
@@ -40,7 +40,8 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `username`, `password`, `name`) VALUES
-(1, 'boscan', '123456', 'Anyelber');
+(2, 'Buendia98', '12345', 'Buendia'),
+(3, 'Flamenco92', '123987', 'oscar');
 
 -- --------------------------------------------------------
 
@@ -62,7 +63,7 @@ CREATE TABLE `carro` (
 --
 
 CREATE TABLE `categorias` (
-  `id` int(11) NOT NULL,
+  `id_categoria` int(11) NOT NULL,
   `categoria` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -70,10 +71,13 @@ CREATE TABLE `categorias` (
 -- Volcado de datos para la tabla `categorias`
 --
 
-INSERT INTO `categorias` (`id`, `categoria`) VALUES
-(2, 'Tecnologia'),
-(3, 'Alimentos'),
-(4, 'En Linea');
+INSERT INTO `categorias` (`id_categoria`, `categoria`) VALUES
+(1, 'Free to Play'),
+(2, 'Accion'),
+(3, 'Aventura'),
+(4, 'Casual'),
+(5, 'Deportes'),
+(6, 'Estrategia');
 
 -- --------------------------------------------------------
 
@@ -93,7 +97,10 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`id`, `username`, `password`, `name`) VALUES
-(1, 'boscan', '123456', 'Anyelber');
+(1, 'Baires96', '125', 'Baires'),
+(2, 'Buendia98', '12345', 'Buendia'),
+(3, 'Flamenco92', '123987', 'oscar'),
+(4, 'Jandres', '98765', 'Jandres');
 
 -- --------------------------------------------------------
 
@@ -115,7 +122,8 @@ CREATE TABLE `compra` (
 
 INSERT INTO `compra` (`id`, `id_cliente`, `fecha`, `monto`, `estado`) VALUES
 (3, 1, '2019-02-24 12:39:04', 16400, 1),
-(4, 1, '2019-04-12 20:03:40', 1360, 0);
+(10, 2, '2019-04-26 04:15:13', 60, 0),
+(12, 1, '2019-04-26 10:12:51', 40, 2);
 
 -- --------------------------------------------------------
 
@@ -138,11 +146,21 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `price`, `imagen`, `name`, `id_categoria`, `oferta`, `descargable`) VALUES
-(1, 1000, 'Aceite776.png', 'Aceite', 3, 0, ''),
-(2, 200, 'Cebolla493.png', 'Cebolla', 3, 0, ''),
-(4, 1000, 'Leche581.png', 'Leche', 3, 50, ''),
-(5, 400, 'Zanahoria838.png', 'Zanahoria', 3, 10, ''),
-(7, 1000, 'Secreto218.png', 'Secreto', 0, 0, '215secreto del mundo.txt');
+(9, 50, 'NBA19155.png', 'NBA19', 5, 0, ''),
+(10, 43, 'FIFA19784.png', 'FIFA19', 5, 0, ''),
+(11, 30, 'MADDEN19142.png', 'MADDEN19', 5, 0, ''),
+(12, 0, 'Fortnite440.png', 'Fortnite', 1, 0, ''),
+(13, 0, 'League of Legends254.png', 'League of Legends', 1, 0, ''),
+(14, 0, 'PUBG212.png', 'PUBG', 1, 0, ''),
+(15, 30, 'Minecraft860.png', 'Minecraft', 3, 0, ''),
+(16, 25, 'Dungeons644.png', 'Dungeons', 4, 0, ''),
+(17, 10, 'Pacman618.png', 'Pacman', 4, 0, ''),
+(18, 20, 'Angry Bird232.png', 'Angry Bird', 4, 0, ''),
+(19, 60, 'God of War 4705.png', 'God of War 4', 2, 0, ''),
+(20, 60, 'Tomb Rider579.png', 'Tomb Rider', 3, 0, ''),
+(21, 20, 'The Walking Dead579.png', 'The Walking Dead', 3, 0, ''),
+(22, 50, 'Alien326.png', 'Alien', 2, 50, ''),
+(29, 40, 'Doom846.png', 'Doom', 2, 0, '');
 
 -- --------------------------------------------------------
 
@@ -168,8 +186,8 @@ INSERT INTO `productos_compra` (`id`, `id_compra`, `id_producto`, `cantidad`, `m
 (3, 3, 3, 4, 1200),
 (4, 3, 2, 4, 200),
 (5, 3, 1, 4, 1000),
-(6, 4, 5, 1, 400),
-(7, 4, 7, 1, 1000);
+(13, 10, 19, 1, 60),
+(14, 12, 29, 1, 40);
 
 --
 -- Índices para tablas volcadas
@@ -185,12 +203,6 @@ ALTER TABLE `admins`
 -- Indices de la tabla `carro`
 --
 ALTER TABLE `carro`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `categorias`
---
-ALTER TABLE `categorias`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -225,43 +237,37 @@ ALTER TABLE `productos_compra`
 -- AUTO_INCREMENT de la tabla `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `carro`
 --
 ALTER TABLE `carro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT de la tabla `categorias`
---
-ALTER TABLE `categorias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `compra`
 --
 ALTER TABLE `compra`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de la tabla `productos_compra`
 --
 ALTER TABLE `productos_compra`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
