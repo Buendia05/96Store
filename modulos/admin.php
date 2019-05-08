@@ -8,8 +8,18 @@ if(isset($enviar)){
 
 	if(mysqli_num_rows($q)>0){
 		$r = mysqli_fetch_array($q);
-		$_SESSION['id'] = $r['id'];
-		alert("¡Bienvenid@ Administrador!");
+		$_SESSION['id_admins'] = $r['id'];
+		echo "
+			<script>
+				Swal.fire(
+				'Good job!',
+				'You clicked the button!',
+				'success'
+
+			);
+
+			</script>
+		";
 		redir("?p=admin");
 	}else{
 		alert("Los datos no son validos");
@@ -19,7 +29,7 @@ if(isset($enviar)){
 
 }
 
-if(isset($_SESSION['id'])){ // si hay una sesion iniciada
+if(isset($_SESSION['id_admins'])){ // si hay una sesion iniciada
 	?>
 	<a href="?p=agregar_producto" style="font-family: 'Orbitron','Arial'; color: #fff;">
 		<button class="btn btn-primary"><i class="fa fa-plus-circle"></i> Agregar Productos</button></a>
@@ -45,6 +55,8 @@ if(isset($_SESSION['id'])){ // si hay una sesion iniciada
 
 				<div class="form-group">
 					<input type="password" class="form-control" placeholder="Contraseña" name="password"/>
+					<h4><a href="?p=frm_admin">Registrate</a></h4>
+					<br>
 				</div>
 
 				<div class="form-group">

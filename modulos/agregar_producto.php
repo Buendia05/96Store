@@ -101,7 +101,9 @@ if(isset($eliminar)){
 <label style="color: #fff; font-size: 16px; font-family:'Orbitron','Arial';">Biblioteca de Juegos<span class="icon-book"></span> </label>
 <br>
 <br>
-<table class="table table-striped" style="font-family: 'Orbitron', 'Arial'; background-color: gray;">
+
+<div class="table-responsive">
+<table class="table table-striped" style="font-family: 'Orbitron', 'Arial'; background-color: gray; ">
 
 	<tr>
 		<th>Nombre</th>
@@ -172,3 +174,4 @@ if(isset($eliminar)){
 	?>
 
 </table>
+</div>

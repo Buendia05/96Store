@@ -24,6 +24,7 @@ if(isset($eliminar)){
 <h1 style="font-family: 'Orbitron','Arial'; color:#fff;">Trackings <span class="icon-road"></span> </h1>
 <br>
 <br>
+<div class="table-responsive">
 <table class="table table-stripe" style="background-color: lightgray; font-family: 'Orbitron','Arial';">
 	<tr>
 		<th>Cliente</th>
@@ -79,3 +80,4 @@ if(isset($eliminar)){
 	}
 ?>
 </table>
+</div>

@@ -30,7 +30,7 @@
       </div>
 
       <div class="form-group">
-        Contraseña: <input type="text" autocomplete="off" class="form-control" placeholder="Contraseña" name="password"/>
+        Contraseña: <input type="password" autocomplete="off" class="form-control" placeholder="Contraseña" name="password"/>
       </div>
 
       <div class="form-group">

@@ -1,0 +1,50 @@
+create database prueva;
+CREATE TABLE IF NOT EXISTS rol (
+ idRol int(11) NOT NULL,
+ rol varchar(255) NOT NULL,
+ PRIMARY KEY (idRol));
+ 
+CREATE TABLE IF NOT EXISTS usuario (
+idUsuario int(11) NOT NULL,
+username varchar(255) NOT NULL,
+password varchar(255) NOT NULL,
+nombre varchar(255) NOT NULL,
+apellido varchar(255) NOT NULL, 
+fecha date default NULL,
+direccion varchar(255) NOT NULL,
+telefono varchar(9) DEFAULT NULL,
+idRol int(11) NOT NULL);
+CREATE TABLE `carro` (
+  `id` int(11) NOT NULL,
+  `id_cliente` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  `cant` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `categorias` (
+  `id` int(11) NOT NULL,
+  `categoria` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `compra` (
+  `id` int(11) NOT NULL,
+  `id_cliente` int(11) NOT NULL,
+  `fecha` datetime NOT NULL,
+  `monto` float NOT NULL,
+  `estado` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `productos` (
+  `id` int(11) NOT NULL,
+  `price` float NOT NULL,
+  `imagen` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `id_categoria` int(11) NOT NULL,
+  `oferta` int(11) NOT NULL,
+  `descargable` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `productos_compra` (
+  `id` int(11) NOT NULL,
+  `id_compra` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `monto` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

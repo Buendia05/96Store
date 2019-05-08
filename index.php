@@ -395,17 +395,9 @@ header nav ul li .children li a{
 	<div class="container-fluid">
 			<div class="menu_bar col-xs-12 col-sm-12">
 				<div class="row">
-				<div class="bt-inicio col-xs-2"><a href="#" class="bt-menu"><span class="icon-list2"></span></a></div>
-				<div class="bt-buscar col-xs-6 col-sm-6">
-					<div class="navbar navbar-expand-sm bg-dark navbar-dark" style="float: center; padding-top:5px;">
-					<form class="form-inline" action="/action_page.php">
-						<input class="form-control mr-sm-2 col-xs-1" type="text" placeholder="Buscar" style="font-family: 'Orbitron','Arial'; font-style: italic; width: 100px; height:60px; margin-left: 50px; position: relative;">
-						<button class="btn btn-success col-xs-1" type="submit" style="height:60px; width: 75px; background-color: blue;"><span class="icon-search" style="font-size: 50px;"></span></button>
-					</form>
-				</div>
-				</div>
-				<div class="bt-carro col-xs-2"><a href="#"><span class="icon-shopcart" style="float:center; color: #fff;"></span></a></div>
-				<div class="bt-sesion col-xs-2"><a href="#"><img id="logo" style="float:center;" src="multimedia/img/logo.png" alt=""></a></div>
+				<div class="bt-inicio col-xs-4 col-sm-4"><a href="#" class="bt-menu"><span class="icon-list2"></span></a></div>
+				<div class="bt-carro col-xs-4 col-sm-4"><a href="?p=carrito"><span class="icon-shopcart" style="float:center; color: #fff;"></span></a></div>
+				<div class="bt-sesion col-xs-4 col-sm-4"><a href="#"><img id="logo" style="float:center;" src="multimedia/img/logo.png" alt=""></a></div>
 			</div>
 			</div>
 
@@ -429,6 +421,28 @@ header nav ul li .children li a{
 							<li><a href="?p=noticias"><span></span>NOTICIAS</a></li>
 							<li><a href="?p=reseñas"><span></span>RESEÑAS</a></li>
 							<li><a href="?p=acercade"><span></span>ACERCA DE</a></li>
+							<li><a href="?p=productos"><span></span>Explorar</a></li>
+							<li><a href="?p=admin"><span></span>Mantenimiento</a></li>
+							<br>
+							<li><a href="?p=login" style="font-style: italic;"><span class="icon-users"></span>Iniciar Sesión</a></li>
+							<div style="padding-top:20px;"><?php
+								if(isset($_SESSION['id_admins'])){
+							?>
+							<a class="pull-right subir icon-exit" href="?p=salir" style="color:lightgreen;"><span style="font-family: 'Orbitron';">Salir</span></a>
+							<a class="pull-right subir icon-users" href="#" style="color:lightgreen;"><span style="font-family: 'Orbitron';"><?=nombre_admins($_SESSION['id_admins'])?></span></a>
+
+							<?php
+								}
+								else if(isset($_SESSION['id_cliente'])){
+									?>
+									<a class="pull-right subir icon-exit" href="?p=salir" style="color:white;"><p style="font-family: 'Orbitron';">Salir</p></a>
+									<a class="pull-right subir icon-users" href="#" style="color:white;"><p style="font-family: 'Orbitron';"><?=nombre_cliente($_SESSION['id_cliente'])?></p></a>
+									</div>
+								<?php
+								}
+							?>
+						</div>
+
 						</ul>
 					</nav>
 				</header>
@@ -474,33 +488,34 @@ header nav ul li .children li a{
 				</div>
 			</div>
 			<div class="row">
-				<div class="cajabuscar col-xs-6 col-sm-6 col-md-6 col-lg-12" style="background-color: black; height: 75px;">
+				<div class="cajabuscar col-xs-6 col-sm-6 col-md-6 col-lg-12" style="font-family: 'Orbitron','Arial'; font-size: 16px; background-color: gray; height: 75px;">
 					<div class="row">
-					<div class="navbar navbar-expand-sm bg-dark navbar-dark col-lg-12" style="padding-top:20px;">
-					<form class="form-inline" action="/action_page.php">
-						<input class="form-control mr-sm-2" type="text" placeholder="Buscar" style="font-family: 'Orbitron','Arial'; font-style: italic; width: 100px; height:35px; margin-left: 20px; position: relative;">
-						<button class="btn btn-success" type="submit" style="height:35px; width: 35px; background-color: blue;"><span class="icon-search" style="font-size: 25px; margin-left: -8px;"></span></button>
-					</form>
-				</div>
+					<div class="col-lg-12" style="padding-top:25px;">
+						<?php
+							if(isset($_SESSION['id_admins'])){
+						?>
+
+						<a class="pull-right subir icon-exit" href="?p=salir" style="color:lightgreen;"><p style="font-family: 'Orbitron';">Salir</p></a>
+						<a class="pull-right subir icon-users" href="#" style="color:lightgreen;"><p style="font-family: 'Orbitron';"><?=nombre_admins($_SESSION['id_admins'])?></p></a>
+
+						<?php
+							}
+							else if(isset($_SESSION['id_cliente'])){
+								?>
+
+								<a class="pull-right subir icon-exit" href="?p=salir" style="color:white;"><p style="font-family: 'Orbitron';">Salir</p></a>
+								<a class="pull-right subir icon-users" href="#" style="color:white;"><p style="font-family: 'Orbitron';"><?=nombre_cliente($_SESSION['id_cliente'])?></p></a>
+								</div>
+							<?php
+							}
+						?>
 				</div>
 				</div>
 			</div>
 			</div>
 		</div>
-
-
-		<?php
-			if(isset($_SESSION['id_cliente'])){
-		?>
-
-		<a class="pull-right subir" href="?p=salir">Salir</a>
-		<a class="pull-right subir" href="#"><?=nombre_cliente($_SESSION['id_cliente'])?></a>
-
 	</div>
-		<?php
-			}
-		?>
-	</div>
+
 	<div class="container-fluid" style="margin-top:30px;">
 		<div class="row">
 	<div class="asideizq col-lg-2 col-md-2 col-sm-2 col-xs-2" style="background-color: blue;">
@@ -579,13 +594,13 @@ header nav ul li .children li a{
 	</div>
 	<div class="footer col-xs-12 col-md-12 col-sm-12 col-xs-12">
 		<div class="row">
-			<div class="col-xs-1"></div>
-			<div class="logo col-xs-1" style="background-color: green; height: 100px;">
+			<div class="col-xs-12"></div>
+			<div class="logo col-xs-12 col-lg-1 col-sm-12 col-md-1" style="background-color: green; height: 100px;">
 				<center>
 					<img style="width: 75px; height: 75px; padding-top: 20px;" src="multimedia/img/logo1.png" alt="">
 				</center>
 			</div>
-			<div class="col-xs-9" style="background-color: blue; height: 100px; font-size: 12px; font-family: Orbitron, Arial; padding: 20px; text-align: justify;">
+			<div class="col-xs-12 col-lg-9 col-md-9 col-sm-12 " style="background-color: blue; height: 100px; font-size: 1vw; font-family: Orbitron, Arial; padding: 20px; text-align: justify;">
 				<div class="row">
 					<div class="col-xs-12" style="border-top: 1px solid #fff; padding-top: 5px; border-bottom: 1px solid #fff; padding-bottom: 5px;">
 						Copyright 96Store &copy; <?=date("Y")?>. Todos los derechos reservados. Todas las marcas registradas pertenecen a sus respectivos dueños en EE.UU y otros paises.
@@ -593,23 +608,23 @@ header nav ul li .children li a{
 					</div>
 				</div>
 				<div class="footer2 row" style="padding-top: 5px;">
-					<div class="us col-xs-2" style="background-color: olive; height: 25px; padding-top: 5px; border-right: 1px solid #fff; text-align: right;">
-						<span><a href="?p=acercade" style="color: #fff;">ACERCA DE</a></span>
+					<div class="us col-xs-2 " style="background-color: olive; height: 25px; padding-top: 5px; border-right: 1px solid #fff; text-align: right;">
+						<a href="?p=acercade"><span class="icon-home" style="color: white;"><i style="color: #fff; font-family: Orbitron, Arial; font-size: 1vw;">Acerca de</i></span></a></span>
 					</div>
 					<div class="fb col-xs-2" style="background-color: skyblue;  height: 25px; padding-top: 5px; border-right: 1px solid #fff; text-align: right;">
-						<a href="https://www.facebook.com/"><span class="icon-facebook2" style="color: blue;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
+						<a href="https://www.facebook.com/"><span class="icon-facebook2" style="color: blue;"><i style="color: #fff; font-family: Orbitron, Arial; font-size: 1vw;">Facebook</i></span></a></span>
 					</div>
 					<div class="in col-xs-2" style="background-color: pink;  height: 25px; padding-top: 5px; border-right: 1px solid #fff; text-align: right;">
-						<a href="https://www.instagram.com/"><span class="icon-instagram" style="color: #fff;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
+						<a href="https://www.instagram.com/"><span class="icon-instagram" style="color: #fff;"><i style="color: #fff; font-family: Orbitron, Arial; font-size: 1vw;">Instagram</i></span></a></span>
 					</div>
 					<div class="tw col-xs-2" style="background-color: gray;  height: 25px; padding-top: 5px; border-right: 1px solid #fff; text-align: right;">
-						<a href="https://twitter.com/?lang=es"><span class="icon-twitter" style="color: skyblue;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
+						<a href="https://twitter.com/?lang=es"><span class="icon-twitter" style="color: skyblue;"><i style="color: #fff; font-family: Orbitron, Arial; font-size: 1vw;">Twitter</i></span></a></span>
 					</div>
 					<div class="yt col-xs-2" style="background-color: skyblue;  height: 25px; padding-top: 5px; border-right: 1px solid #fff; text-align: right;">
-						<a href="https://www.youtube.com/"><span class="icon-youtube" style="color: red;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
+						<a href="https://www.youtube.com/"><span class="icon-youtube" style="color: red;"><i style="color: #fff; font-family: Orbitron, Arial; font-size: 1vw;">Youtube</i></span></a></span>
 					</div>
 					<div class="pi col-xs-2" style="background-color: pink;  height: 25px; padding-top: 5px; text-align: right;">
-						<a href="https://www.pinterest.es/"><span class="icon-pinterest" style="color: orange;"><i style="color: #fff; font-family: Orbitron, Arial;">96Store</i></span></a></span>
+						<a href="https://www.pinterest.es/"><span class="icon-pinterest" style="color: orange;"><i style="color: #fff; font-family: Orbitron, Arial; font-size: 1vw;">Pinterest</i></span></a></span>
 					</div>
 				</div>
 			</div>

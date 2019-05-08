@@ -54,7 +54,7 @@ if(isset($finalizar)){
 
 <h1 style="font-family: 'Orbitron','Arial'; color: #fff;"><i class="fa fa-shopping-cart"></i> Carro de Compras</h1>
 <br><br>
-
+<div class="table-responsive">
 <table class="table table-striped" style="font-family: 'Orbitron','Arial'; background-color: gray;">
 	<tr>
 		<th><i class="fa fa-image"></i></th>
@@ -125,6 +125,7 @@ while($r = mysqli_fetch_array($q)){
 }
 ?>
 </table>
+</div>
 <br>
 <h2 style="font-family: 'Orbitron','Arial';">Monto Total: <b class="text-green" style="font-family: 'Orbitron','Arial';"><?=$monto_total?> <?=$divisa?></b></h2>
 

@@ -6,7 +6,7 @@ $user_mysql = "root";
 $pass_mysql = "";
 $db_mysql = "tienda";
 $mysqli = mysqli_connect($host_mysql,$user_mysql,$pass_mysql,$db_mysql);
-	
+
 
 function clear($var){
 	htmlspecialchars($var);
@@ -15,7 +15,7 @@ function clear($var){
 }
 
 function check_admin(){
-	if(!isset($_SESSION['id'])){
+	if(!isset($_SESSION['id_admins'])){
 		redir("./");
 	}
 }
@@ -51,6 +51,13 @@ function nombre_cliente($id_cliente){
 	$mysqli = connect();
 
 	$q = $mysqli->query("SELECT * FROM clientes WHERE id = '$id_cliente'");
+	$r = mysqli_fetch_array($q);
+	return $r['name'];
+}
+function nombre_admins($id_admins){
+	$mysqli = connect();
+
+	$q = $mysqli->query("SELECT * FROM admins WHERE id = '$id_admins'");
 	$r = mysqli_fetch_array($q);
 	return $r['name'];
 }

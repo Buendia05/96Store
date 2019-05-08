@@ -87,10 +87,9 @@ while($r=mysqli_fetch_array($q)){
 				$preciototal = $r['price'];
 			}
 	?>
-
-		<div class="producto" style="font-family: 'Orbitron','Arial'; color:#fff;">
+		<div class="producto" style="font-family: 'Orbitron','Arial'; color:#fff; font-size: 3.5vw;">
 			<center>
-			<div class="name_producto"><?=$r['name']?></div>
+			<div class="name_producto" style="font-size: 2vw;"><?=$r['name']?></div>
 			<div><img style="width: 100%; height:100%;"class="img_producto" src="productos/<?=$r['imagen']?>"/></div>
 			<?php
 			if($r['oferta']>0){

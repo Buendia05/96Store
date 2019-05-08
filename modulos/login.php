@@ -15,21 +15,23 @@ if(isset($enviar)){
 		if(isset($return)){
 			echo "
 				<script>
-								Swal.fire(
+					Swal.fire(
 				  'Good job!',
-				  'You clicked the button!',
+				  'You clicked the submit!',
 				  'success',
-				'.redir('?p='.$return).'
-				);
-          
+				)
 				</script>
 			";
-			
-		}else{
+
+//sleep(4);
+
+			redir('?p='.$return);
+
+		}/*else{
 
 			redir("./");
 
-		}
+		}*/
 	}else{
 		alert("Los datos no son validos");
 		redir("?p=login");
@@ -53,11 +55,12 @@ if(isset($enviar)){
 
 				<div class="form-group">
 					<input type="password" class="form-control" placeholder="Contraseña" name="password"/>
+					<h4><a href="?p=frm_cliente">Registrate</a></h4>
+					<br>
 				</div>
-				<h4><a href="?p=frm_cliente">Registrate</a></h4>
-				<br>
+
 				<div class="form-group">
-					<button class="btn btn-submit" name="enviar" type="submit"><i class="fa fa-sign-in"></i> Ingresar</button>
+					<button class="btn btn-primary" name="enviar" ><i class="fa fa-sign-in"></i> Ingresar</button>
 				</div>
 			</div>
 		</form>
