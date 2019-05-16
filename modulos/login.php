@@ -30,7 +30,7 @@ if(isset($enviar)){
 
 			redir("./");
 
-		}*/
+		}
 	}else{
 		alert("Los datos no son validos");
 		redir("?p=login");

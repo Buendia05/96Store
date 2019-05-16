@@ -5,12 +5,12 @@ $host_mysql = "localhost";
 $user_mysql = "root";
 $pass_mysql = "";
 $db_mysql = "tienda";
-$mysqli = mysqli_connect($host_mysql,$user_mysql,$pass_mysql,$db_mysql);
 
+
+$mysqli = mysqli_connect($host_mysql,$user_mysql,$pass_mysql,$db_mysql);
 
 function clear($var){
 	htmlspecialchars($var);
-
 	return $var;
 }
 
@@ -38,7 +38,6 @@ function alert($var){
 }
 
 function check_user($url){
-
 	if(!isset($_SESSION['id_cliente'])){
 		redir("?p=login&return=$url");
 	}else{
