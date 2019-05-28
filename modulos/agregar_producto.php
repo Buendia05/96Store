@@ -7,13 +7,18 @@ if(isset($enviar)){
 	$oferta = clear($oferta);
 
 	$imagen = "";
+	$descargable ="";
 
 	if(is_uploaded_file($_FILES['imagen']['tmp_name'])){
 		$imagen = $name.rand(0,1000).".png";
-		move_uploaded_file($_FILES['imagen']['tmp_name'], "productos/".$imagen);
+		move_uploaded_file($_FILES['imagen']['tmp_name'], "../productos/".$imagen);
+	}
+	if(is_uploaded_file($_FILES['descargable']['tmp_name'])){
+		$descargable = rand(0,1000).$_FILES['descargable']['name'];
+		move_uploaded_file($_FILES['descargable']['tmp_name'], "../descargable/".$descargable);
 	}
 
-	$mysqli->query("INSERT INTO productos (name,price,imagen,oferta) VALUES ('$name','$price','$imagen','ferta')");
+	$mysqli->query("INSERT INTO productos (name,price,imagen,oferta,descargable) VALUES ('$name','$price','$imagen','ferta','$descargable')");
 	alert("Producto agregado");
 	redir("?p=agregar_producto");
 }
@@ -88,6 +93,11 @@ if(isset($eliminar)){
 			<option value="95">95% de Descuento</option>
 			<option value="99">99% de Descuento</option>
 		</select>
+	</div>
+
+	<div class="form-group">
+		<label>¿Tiene algun archivo de descarga?</label>
+		<input class="form-control" type="file" name="descargable"/>
 	</div>
 
 

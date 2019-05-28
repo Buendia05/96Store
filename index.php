@@ -417,7 +417,7 @@ header nav ul li .children li a{
 									<li><a href="#">Estrategia<span></span></a></li>
 								</ul>
 							</li>
-							<li><a href="#"><span></span>BIBLIOTECA</a></li>
+							<li><a href="?=principal"><span></span>BIBLIOTECA</a></li>
 							<li><a href="?p=noticias"><span></span>NOTICIAS</a></li>
 							<li><a href="?p=reseñas"><span></span>RESEÑAS</a></li>
 							<li><a href="?p=acercade"><span></span>ACERCA DE</a></li>
@@ -468,7 +468,7 @@ header nav ul li .children li a{
 									<li><a href="#">Estrategia<span></span></a></li>
 								</ul>
 							</li>
-							<li><a href="#"><span></span>BIBLIOTECA</a></li>
+							<li><a href="?=principal"><span></span>BIBLIOTECA</a></li>
 							<li><a href="?p=noticias"><span></span>NOTICIAS</a></li>
 							<li><a href="?p=reseñas"><span></span>RESEÑAS</a></li>
 							<li><a href="?p=acercade"><span></span>ACERCA DE</a></li>
@@ -526,6 +526,8 @@ header nav ul li .children li a{
 		<a class="lis" href="?p=frm_admin">Registro Admin</a>
     <hr>
 		<a class="lis" href="?p=productos">Explorar Categorias</a>
+		<br>
+		<a class="lis" href="?p=miscompras">Mis Compras</a>
     <hr>
 		<a href="">Los mas vendido</a>
 		<a href="">Actualizaciones recientemente</a>

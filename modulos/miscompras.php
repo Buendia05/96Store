@@ -1,11 +1,13 @@
 <?php
 check_user('miscompras');
-$s = $mysqli->query("SELECT * FROM compra WHERE id_cliente = '".$_SESSION['id']."' ORDER BY fecha DESC");
+$s = $mysqli->query("SELECT * FROM compra WHERE id_cliente = '".$_SESSION['id_cliente']."' ORDER BY fecha DESC");
 if(mysqli_num_rows($s)>0){
 	?>
-	<h1 style="font-family: 'Orbitron','Arial'; color:#fff;">Mis compras <span class="icon-shopcart"></span> </h1>
 
-	<table class="table table-stripe">
+<h1 style="font-family: 'Orbitron','Arial'; color:#fff;">Mis compras <span class="icon-shopcart"></span> </h1>
+<br>
+<div class="table-responsive">
+	<table class="table table-stripe" style="font-family: 'Orbitron', 'Arial'; color:#fff; background-color: gray; ">
 		<tr>
 			<th>Fecha</th>
 			<th>Monto</th>
@@ -22,18 +24,25 @@ if(mysqli_num_rows($s)>0){
 			<td><?=estado($r['estado'])?></td>
 			<td>
 				<a href="?p=ver_compra&id=<?=$r['id']?>">
-					<i class="fa fa-eye"></i>
+					<i class="fa fa-eye" style="color:#fff;"></i>
 				</a>
+				<?php
+					if (estado($r['estado']) == "Iniciando") {
+						?>
+						&nbsp;&nbsp; <a title="Pagar" href="?=pagar_compra&id=<?=$r['id']?>"><b style="color:#fff;">P</b></a>
+						<?php
+					}
+				?>
 			</td>
 		</tr>
 		<?php
 	}
 	?>
 	</table>
-
+</div>
 	<?php
 }else{
 	?>
-	<i>Usted aun no ha comprado</i>
+	<i style="font-family: 'Orbitron','Arial'; color:#fff;">Lo sentimos, Usted aun no ha comprado</i>
 	<?php
 }

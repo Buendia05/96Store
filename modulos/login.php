@@ -13,18 +13,6 @@ if(isset($enviar)){
 		$r = mysqli_fetch_array($q);
 		$_SESSION['id_cliente'] = $r['id'];
 		if(isset($return)){
-			redir("
-				<script>
-					Swal.fire(
-				  'Good job!',
-				  'You clicked the submit!',
-				  'success',
-				'timer: 2000 '
-				);
-
-				</script>
-			");
-
 			redir("?p=".$return);
 		}else{
 

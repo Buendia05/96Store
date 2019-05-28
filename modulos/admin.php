@@ -39,6 +39,9 @@ if(isset($_SESSION['id_admins'])){ // si hay una sesion iniciada
 
 		<a href="?p=manejar_tracking" style="font-family: 'Orbitron','Arial'; color: #fff;">
 		<button class="btn btn-warning"><i class="fa fa-plus-circle"></i> Manejar Tracking</button></a>
+
+		<a href="?p=pagos" style="font-family: 'Orbitron','Arial'; color: #fff;">
+		<button class="btn btn-warning"><i class="fa fa-plus-circle"></i> Manejar Pagos</button></a>
 	<?php
 }else{ // si no hay una sesion iniciada
 	?>

@@ -2,7 +2,7 @@
 check_user('ver_compra');
 $id = clear($id);
 
-$s = $mysqli->query("SELECT * FROM compra WHERE id = '$id' AND id_cliente = '".$_SESSION['id']."'");
+$s = $mysqli->query("SELECT * FROM compra WHERE id = '$id' AND id_cliente = '".$_SESSION['id_cliente']."'");
 
 if(mysqli_num_rows($s)>0){
 
@@ -15,13 +15,15 @@ $rc = mysqli_fetch_array($sc);
 $nombre = $rc['name'];
 
 ?>
-<h1>Viendo compra #<span style="color:#08f"><?=$r['id']?></span></h1><br>
+<div class="row" style="font-family: 'Orbitron','Arial'; color:#fff;">
+<h1>Compra #<span style="color:#08f"><?=$r['id']?></span></h1><br>
 
 Fecha: <?=fecha($r['fecha'])?><br>
 Monto: <?=number_format($r['monto'])?> <?=$divisa?><br>
 Estado: <?=estado($r['estado'])?><br>
 <br>
-<table class="table table-striped">
+<div class="table-responsive">
+<table class="table table-striped" style="font-family: 'Orbitron', 'Arial'; color:black; background-color: gray; ">
 	<tr>
 		<th>Nombre del producto</th>
 		<th>Cantidad</th>
@@ -61,7 +63,17 @@ Estado: <?=estado($r['estado'])?><br>
 		}
 	?>
 </table>
-
+<br>
+<br>
+<?php
+if (estado($r['estado']) == "Iniciando") {
+	?>
+	<a class="btn btn-primary" href="?=pagar_compra&id=<?=$r['id']?>">Pagar</a>
+	<?php
+}
+?>
+</div>
+</div>
 <?php
 
 }else{
