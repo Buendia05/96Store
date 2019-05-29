@@ -15,15 +15,13 @@ $rc = mysqli_fetch_array($sc);
 $nombre = $rc['name'];
 
 ?>
-<div class="row" style="font-family: 'Orbitron','Arial'; color:#fff;">
-<h1>Compra #<span style="color:#08f"><?=$r['id']?></span></h1><br>
+<h1>Viendo compra #<span style="color:#08f"><?=$r['id']?></span></h1><br>
 
 Fecha: <?=fecha($r['fecha'])?><br>
 Monto: <?=number_format($r['monto'])?> <?=$divisa?><br>
 Estado: <?=estado($r['estado'])?><br>
 <br>
-<div class="table-responsive">
-<table class="table table-striped" style="font-family: 'Orbitron', 'Arial'; color:black; background-color: gray; ">
+<table class="table table-striped">
 	<tr>
 		<th>Nombre del producto</th>
 		<th>Cantidad</th>
@@ -66,14 +64,15 @@ Estado: <?=estado($r['estado'])?><br>
 <br>
 <br>
 <?php
-if (estado($r['estado']) == "Iniciando") {
+if(estado($r['estado']) == "Iniciando"){
 	?>
-	<a class="btn btn-primary" href="?=pagar_compra&id=<?=$r['id']?>">Pagar</a>
+	<a class="btn btn-primary" href="?p=pagar_compra&id=<?=$r['id']?>">
+		Pagar
+	</a>
 	<?php
 }
 ?>
-</div>
-</div>
+
 <?php
 
 }else{
