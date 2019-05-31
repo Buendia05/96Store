@@ -31,7 +31,7 @@ if(isset($enviar)){
 
 	<center>
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<img src="multimedia/img/logo1.png" alt="" style="width:200px; height:200px;">
+			<img src="recursos/multimedia/img/logo1.png" alt="" style="width:200px; height:200px;">
 		</div>
 		<form method="post" action="" style="font-family: 'Orbitron','Arial'; color: #fff;">
 			<div class="centrar_login">

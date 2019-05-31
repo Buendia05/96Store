@@ -11,11 +11,11 @@ if(isset($enviar)){
 
 	if(is_uploaded_file($_FILES['imagen']['tmp_name'])){
 		$imagen = $name.rand(0,1000).".png";
-		move_uploaded_file($_FILES['imagen']['tmp_name'], "../productos/".$imagen);
+		move_uploaded_file($_FILES['imagen']['tmp_name'], "../recursos/productos/".$imagen);
 	}
 	if(is_uploaded_file($_FILES['descargable']['tmp_name'])){
 		$descargable = rand(0,1000).$_FILES['descargable']['name'];
-		move_uploaded_file($_FILES['descargable']['tmp_name'], "../descargable/".$descargable);
+		move_uploaded_file($_FILES['descargable']['tmp_name'], "../recursos/descargable/".$descargable);
 	}
 
 	$mysqli->query("INSERT INTO productos (name,price,imagen,oferta,descargable) VALUES ('$name','$price','$imagen','ferta','$descargable')");

@@ -15,15 +15,15 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="multimedia/img/black.jpg" alt="Los Angeles" style="width:100%;">
+        <img src="recursos/multimedia/img/black.jpg" alt="Los Angeles" style="width:100%;">
       </div>
 
       <div class="item">
-        <img src="multimedia/img/Mortal.jpg" alt="Chicago" style="width:100%;">
+        <img src="recursos/multimedia/img/Mortal.jpg" alt="Chicago" style="width:100%;">
       </div>
 
       <div class="item">
-        <img src="multimedia/img/batl.jpg" alt="New york" style="width:100%;">
+        <img src="recursos/multimedia/img/batl.jpg" alt="New york" style="width:100%;">
       </div>
     </div>
 
@@ -49,8 +49,8 @@
     </label>
   <div class="swiper-wrapper">
     <div class="swiper-slide">
-      <figure class="slide-bgimg" style="background-image:url(multimedia/img/fifa.jpg)">
-        <img src="multimedia/img/fifa.jpg" class="entity-img" />
+      <figure class="slide-bgimg" style="background-image:url(recursos/multimedia/img/fifa.jpg)">
+        <img src="recursos/multimedia/img/fifa.jpg" class="entity-img" />
       </figure>
       <div class="content">
         <p class="title"></p>
@@ -58,8 +58,8 @@
       </div>
     </div>
     <div class="swiper-slide">
-      <figure class="slide-bgimg" style="background-image:url(multimedia/img/gta.jpg)">
-        <img src="multimedia/img/gta.jpg" class="entity-img" />
+      <figure class="slide-bgimg" style="background-image:url(recursos/multimedia/img/gta.jpg)">
+        <img src="recursos/multimedia/img/gta.jpg" class="entity-img" />
       </figure>
 
       <div class="content">
@@ -68,8 +68,8 @@
       </div>
     </div>
     <div class="swiper-slide">
-      <figure class="slide-bgimg" style="background-image:url(multimedia/img/batl.jpg)">
-        <img src="multimedia/img/batl.jpg" class="entity-img" />
+      <figure class="slide-bgimg" style="background-image:url(recursos/multimedia/img/batl.jpg)">
+        <img src="recursos/multimedia/img/batl.jpg" class="entity-img" />
       </figure>
       <div class="content">
         <p class="title"></p>
@@ -77,8 +77,8 @@
       </div>
     </div>
     <div class="swiper-slide">
-      <figure class="slide-bgimg" style="background-image:url(multimedia/img/need.jpg)">
-        <img src="multimedia/img/need.jpg" class="entity-img" />
+      <figure class="slide-bgimg" style="background-image:url(recursos/multimedia/img/need.jpg)">
+        <img src="recursos/multimedia/img/need.jpg" class="entity-img" />
       </figure>
       <div class="content">
         <p class="title"></p>
@@ -86,8 +86,8 @@
       </div>
     </div>
     <div class="swiper-slide">
-      <figure class="slide-bgimg" style="background-image:url(multimedia/img/resident.jpeg)">
-        <img src="multimedia/img/resident.jpeg" class="entity-img" />
+      <figure class="slide-bgimg" style="background-image:url(recursos/multimedia/img/resident.jpeg)">
+        <img src="recursos/multimedia/img/resident.jpeg" class="entity-img" />
       </figure>
       <div class="content">
         <p class="title"></p>
@@ -104,40 +104,40 @@
 <div class="swiper-container nav-slider loading" style="height:700px;">
   <div class="swiper-wrapper" role="navigation">
     <div class="swiper-slide">
-      <figure class="slide-bgimg" style="background-image:url(multimedia/img/fifa1.jpg)">
-        <img src="multimedia/img/gta.jpg" class="entity-img" />
+      <figure class="slide-bgimg" style="background-image:url(recursos/multimedia/img/fifa1.jpg)">
+        <img src="recursos/multimedia/img/gta.jpg" class="entity-img" />
       </figure>
       <div class="content">
         <p class="title"></p>
       </div>
     </div>
     <div class="swiper-slide">
-      <figure class="slide-bgimg" style="background-image:url(multimedia/img/gta.jpg)">
-        <img src="multimedia/img/gta.jpg" class="entity-img" />
+      <figure class="slide-bgimg" style="background-image:url(recursos/multimedia/img/gta.jpg)">
+        <img src="recursos/multimedia/img/gta.jpg" class="entity-img" />
       </figure>
       <div class="content">
         <p class="title"></p>
       </div>
     </div>
     <div class="swiper-slide">
-      <figure class="slide-bgimg" style="background-image:url(multimedia/img/batl.jpg)">
-        <img src="multimedia/img/batl.jpg" class="entity-img" />
+      <figure class="slide-bgimg" style="background-image:url(recursos/multimedia/img/batl.jpg)">
+        <img src="recursos/multimedia/img/batl.jpg" class="entity-img" />
       </figure>
       <div class="content">
         <p class="title"></p>
       </div>
     </div>
     <div class="swiper-slide">
-      <figure class="slide-bgimg" style="background-image:url(multimedia/img/need.jpg)">
-        <img src="multimedia/img/need.jpg" class="entity-img" />
+      <figure class="slide-bgimg" style="background-image:url(recursos/multimedia/img/need.jpg)">
+        <img src="recursos/multimedia/img/need.jpg" class="entity-img" />
       </figure>
       <div class="content">
         <p class="title"></p>
       </div>
     </div>
     <div class="swiper-slide">
-      <figure class="slide-bgimg" style="background-image:url(multimedia/img/resident1.jpg)">
-        <img src="multimedia/img/resident1.jpg" class="entity-img" />
+      <figure class="slide-bgimg" style="background-image:url(recursos/multimedia/img/resident1.jpg)">
+        <img src="recursos/multimedia/img/resident1.jpg" class="entity-img" />
       </figure>
       <div class="content">
         <p class="title"></p>

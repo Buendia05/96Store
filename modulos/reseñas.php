@@ -18,7 +18,7 @@
 						</div>
 						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12" style="margin-top:20px;">
 							<center>
-							<img class="img-fluid mx-auto d-block " src="multimedia/img/halo.jpg" style="max-width: 100%; height: 300px; border-radius: 10px;">
+							<img class="img-fluid mx-auto d-block " src="recursos/multimedia/img/halo.jpg" style="max-width: 100%; height: 300px; border-radius: 10px;">
 						</center>
 						</div>
 						</div>

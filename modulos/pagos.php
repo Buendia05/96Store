@@ -34,7 +34,7 @@ if(isset($aceptar)){
 		<tr>
 			<td><?=nombre_cliente($r['id_cliente'])?></td>
 			<td><?=fecha($r['fecha'])?></td>
-			<td><a style="color:#333" target="_blank" href="../comprobantes/<?=$r['comprobante']?>">Ver Comprobante <i class="fa fa-eye"></i></a></td>
+			<td><a style="color:#333" target="_blank" href="../recursos/comprobantes/<?=$r['comprobante']?>">Ver Comprobante <i class="fa fa-eye"></i></a></td>
 			<td><?=$r['nombre']?></td>
 			<td><?=estado_pago($r['estado'])?></td>
 			<td>
