@@ -1,6 +1,6 @@
 <?php
 check_user('miscompras');
-$s = $mysqli->query("SELECT * FROM compra WHERE id_cliente = '".$_SESSION['id_cliente']."' ORDER BY fecha DESC");
+$s = $mysqli->query("SELECT * FROM compra WHERE id_clientes = '".$_SESSION['id_clientes']."' ORDER BY fecha DESC");
 if(mysqli_num_rows($s)>0){
 	?>
 
@@ -23,13 +23,13 @@ if(mysqli_num_rows($s)>0){
 			<td><?=number_format($r['monto'])?> <?=$divisa?></td>
 			<td><?=estado($r['estado'])?></td>
 			<td>
-				<a href="?p=ver_compra&id=<?=$r['id']?>">
+				<a href="?p=ver_compra&id=<?=$r['id_compra']?>">
 					<i class="fa fa-eye" style="color:#fff;"></i>
 				</a>
 				<?php
 					if (estado($r['estado']) == "Iniciando") {
 						?>
-						&nbsp;&nbsp; <a title="Pagar" href="?=pagar_compra&id=<?=$r['id']?>"><b style="color:#fff;">P</b></a>
+						&nbsp;&nbsp; <a title="Pagar" href="?=pagar_compra&id=<?=$r['id_compra']?>"><b style="color:#fff;">P</b></a>
 						<?php
 					}
 				?>

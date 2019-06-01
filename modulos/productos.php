@@ -15,17 +15,17 @@ if(isset($agregar) && isset($cant)){
 
 	$idp = clear($agregar);
 	$cant = clear($cant);
-	$id_cliente = clear($_SESSION['id_cliente']);
+	$id_clientes = clear($_SESSION['id_clientes']);
 
-	$v = $mysqli->query("SELECT * FROM carro WHERE id_cliente = '$id_cliente' AND id_producto = '$idp'");
+	$v = $mysqli->query("SELECT * FROM carro WHERE id_clientes = '$id_clientes' AND id_productos = '$idp'");
 
 	if(mysqli_num_rows($v)>0){
 
-		$q = $mysqli->query("UPDATE carro SET cant = cant + $cant WHERE id_cliente = '$id_cliente' AND id_producto = '$idp'");
+		$q = $mysqli->query("UPDATE carro SET cant = cant + $cant WHERE id_clientes = '$id_clientes' AND id_productos = '$idp'");
 
 	}else{
 
-		$q = $mysqli->query("INSERT INTO carro (id_cliente,id_producto,cant) VALUES ($id_cliente,$idp,$cant)");
+		$q = $mysqli->query("INSERT INTO carro (id_clientes,id_productos,cant) VALUES ($id_clientes,$idp,$cant)");
 
 	}
 
@@ -36,13 +36,13 @@ if(isset($agregar) && isset($cant)){
 if(isset($busq) && isset($cat)){
 	$q = $mysqli->query("SELECT * FROM productos WHERE name like '%$busq%' AND id_categoria = '$cat'");
 }elseif(isset($cat) && !isset($busq)){
-	$q = $mysqli->query("SELECT * FROM productos WHERE id_categoria = '$cat' ORDER BY id DESC");
+	$q = $mysqli->query("SELECT * FROM productos WHERE id_categoria = '$cat' ORDER BY id_productos DESC");
 }elseif(isset($busq) && !isset($cat)){
 	$q = $mysqli->query("SELECT * FROM productos WHERE name like '%$busq%'");
 }elseif(!isset($busq) && !isset($cat)){
-	$q = $mysqli->query("SELECT * FROM productos ORDER BY id DESC");
+	$q = $mysqli->query("SELECT * FROM productos ORDER BY id_productos DESC");
 }else{
-	$q = $mysqli->query("SELECT * FROM productos ORDER BY id DESC");
+	$q = $mysqli->query("SELECT * FROM productos ORDER BY id_productos DESC");
 }
 ?>
 
@@ -68,7 +68,7 @@ if(isset($busq) && isset($cat)){
 				</select>
 			</div>
 			<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-				<button type="submit" class="btn btn-prmiary" name="buscar"><i class="fa fa-serch"></i> Buscar</button>
+				<button type="submit" class="btn btn-primary" name="buscar"><i class="fa fa-serch"></i> Buscar</button>
 			</div>
 		</div>
 	</form>
@@ -103,7 +103,7 @@ while($r=mysqli_fetch_array($q)){
 			}
 			?>
 
-			<button class="btn btn-warning pull-right" onclick="agregar_carro('<?=$r['id']?>');"><i class="fa fa-shopping-cart"></i></button>
+			<button class="btn btn-warning pull-right" onclick="agregar_carro('<?=$r['id_productos']?>');"><i class="fa fa-shopping-cart"></i></button>
 			</center>
 		</div>
 

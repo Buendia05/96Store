@@ -1,5 +1,5 @@
 <?php
-if(isset($_SESSION['id_cliente'])){
+if(isset($_SESSION['id_clientes'])){
 	redir("./");
 }
 
@@ -11,7 +11,7 @@ if(isset($enviar)){
 
 	if(mysqli_num_rows($q)>0){
 		$r = mysqli_fetch_array($q);
-		$_SESSION['id_cliente'] = $r['id'];
+		$_SESSION['id_clientes'] = $r['id_clientes'];
 		if(isset($return)){
 			redir("?p=".$return);
 		}else{

@@ -474,10 +474,10 @@ header nav ul li .children li a{
 
 							<?php
 								}
-								else if(isset($_SESSION['id_cliente'])){
+								else if(isset($_SESSION['id_clientes'])){
 									?>
 									<a class="pull-right subir icon-exit" href="?p=salir" style="color:white;"><p style="font-family: 'Orbitron';">Salir</p></a>
-									<a class="pull-right subir icon-users" href="#" style="color:white;"><p style="font-family: 'Orbitron';"><?=nombre_cliente($_SESSION['id_cliente'])?></p></a>
+									<a class="pull-right subir icon-users" href="#" style="color:white;"><p style="font-family: 'Orbitron';"><?=nombre_cliente($_SESSION['id_clientes'])?></p></a>
 									</div>
 								<?php
 								}
@@ -541,11 +541,11 @@ header nav ul li .children li a{
 
 						<?php
 							}
-							else if(isset($_SESSION['id_cliente'])){
+							else if(isset($_SESSION['id_clientes'])){
 								?>
 
 								<a class="pull-right subir icon-exit" href="?p=salir" style="color:white;"><p style="font-family: 'Orbitron';">Salir</p></a>
-								<a class="pull-right subir icon-users" href="#" style="color:white;"><p style="font-family: 'Orbitron';"><?=nombre_cliente($_SESSION['id_cliente'])?></p></a>
+								<a class="pull-right subir icon-users" href="#" style="color:white;"><p style="font-family: 'Orbitron';"><?=nombre_cliente($_SESSION['id_clientes'])?></p></a>
 								</div>
 							<?php
 							}
@@ -617,11 +617,11 @@ header nav ul li .children li a{
 			<th>Precio</th>
 		</tr>
 	<?php
-	$id_cliente = clear($_SESSION['id_cliente']);
-	$q = $mysqli->query("SELECT * FROM carro WHERE id_cliente = '$id_cliente'");
+	$id_clientes = clear($_SESSION['id_clientes']);
+	$q = $mysqli->query("SELECT * FROM carro WHERE id_clientes = '$id_clientes'");
 	$monto_total = 0;
 	while($r = mysqli_fetch_array($q)){
-		$q2 = $mysqli->query("SELECT * FROM productos WHERE id = '".$r['id_producto']."'");
+		$q2 = $mysqli->query("SELECT * FROM productos WHERE id_productos = '".$r['id_productos']."'");
 		$r2 = mysqli_fetch_array($q2);
 
 		$preciototal = 0;

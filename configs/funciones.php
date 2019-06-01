@@ -38,7 +38,7 @@ function alert($var){
 }
 
 function check_user($url){
-	if(!isset($_SESSION['id_cliente'])){
+	if(!isset($_SESSION['id_clientes'])){
 		redir("?p=login&return=$url");
 	}else{
 
@@ -46,17 +46,17 @@ function check_user($url){
 
 }
 
-function nombre_cliente($id_cliente){
+function nombre_cliente($id_clientes){
 	$mysqli = connect();
 
-	$q = $mysqli->query("SELECT * FROM clientes WHERE id = '$id_cliente'");
+	$q = $mysqli->query("SELECT * FROM clientes WHERE id_clientes = '$id_clientes'");
 	$r = mysqli_fetch_array($q);
 	return $r['name'];
 }
 function nombre_admins($id_admins){
 	$mysqli = connect();
 
-	$q = $mysqli->query("SELECT * FROM admins WHERE id = '$id_admins'");
+	$q = $mysqli->query("SELECT * FROM admins WHERE id_admins = '$id_admins'");
 	$r = mysqli_fetch_array($q);
 	return $r['name'];
 }
@@ -109,10 +109,10 @@ function estado($id_estado){
 
 function admin_name_connected(){
 	include "config.php";
-	$id = $_SESSION['id'];
+	$id = $_SESSION['id_admins'];
 	$mysqli = connect();
 
-	$q = $mysqli->query("SELECT * FROM admins WHERE id = '$id'");
+	$q = $mysqli->query("SELECT * FROM admins WHERE id_admins = '$id'");
 	$r = mysqli_fetch_array($q);
 
 	return $r['name'];

@@ -13,7 +13,7 @@ if(isset($eliminar)){
 
 	$mysqli->query("DELETE FROM productos_compra WHERE id_compra = '$eliminar'");
 
-	$mysqli->query("DELETE FROM compra WHERE id = '$eliminar'");
+	$mysqli->query("DELETE FROM compra WHERE id_compra = '$eliminar'");
 	redir("?p=manejar_tracking");
 
 }
@@ -36,7 +36,7 @@ if(isset($eliminar)){
 <?php
 	while($r=mysqli_fetch_array($s)){
 
-		$sc = $mysqli->query("SELECT * FROM clientes WHERE id = '".$r['id_cliente']."'");
+		$sc = $mysqli->query("SELECT * FROM clientes WHERE id_clientes = '".$r['id_clientes']."'");
 		$rc = mysqli_fetch_array($sc);
 		$cliente = $rc['name'];
 
@@ -63,15 +63,15 @@ if(isset($eliminar)){
 			<td><?=$r['monto']?> <?=$divisa?></td>
 			<td><?=$status?></td>
 			<td>
-				<a href="?p=manejar_tracking&eliminar=<?=$r['id']?>">
+				<a href="?p=manejar_tracking&eliminar=<?=$r['id_compra']?>">
 					<i class="fa fa-times"></i>
 				</a>
 				&nbsp; &nbsp;
-				<a href="?p=manejar_status&id=<?=$r['id']?>">
+				<a href="?p=manejar_status&id=<?=$r['id_compra']?>">
 					<i class="fa fa-edit"></i>
 				</a>
 				&nbsp; &nbsp;
-				<a href="?p=ver_compra&id=<?=$r['id']?>">
+				<a href="?p=ver_compra&id=<?=$r['id_compra']?>">
 					<i class="fa fa-eye"></i>
 				</a>
 			</td>

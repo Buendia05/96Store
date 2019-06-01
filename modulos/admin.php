@@ -8,7 +8,7 @@ if(isset($enviar)){
 
 	if(mysqli_num_rows($q)>0){
 		$r = mysqli_fetch_array($q);
-		$_SESSION['id_admins'] = $r['id'];
+		$_SESSION['id_admins'] = $r['id_admins'];
 		echo "
 			<script>
 				Swal.fire(

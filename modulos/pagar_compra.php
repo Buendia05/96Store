@@ -11,7 +11,7 @@ if(isset($subir)){
 		move_uploaded_file($_FILES['comprobante']['tmp_name'], "recursos/comprobantes/".$comprobante);
 	}
 
-	$mysqli->query("INSERT INTO pagos (id_cliente,id_compra,comprobante,nombre,fecha) VALUES ('".$_SESSION['id_cliente']."','$id','$comprobante','$nombre',NOW())");
+	$mysqli->query("INSERT INTO pagos (id_clientes,id_compra,comprobante,nombre,fecha) VALUES ('".$_SESSION['id_clientes']."','$id','$comprobante','$nombre',NOW())");
 
 	alert("Comprobante enviado");
 	redir("?p=miscompras");

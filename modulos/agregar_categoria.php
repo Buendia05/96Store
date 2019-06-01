@@ -7,7 +7,7 @@ if(isset($enviar)){
 	$s = $mysqli->query("SELECT * FROM categorias WHERE categoria = '$categoria'");
 
 	if(mysqli_num_rows($s)>0){
-		alert("Ya esta categoria esta agregada a la base de datos");
+		alert("Esta categoria esta agregada a la base de datos");
 		redir("");
 	}else{
 		$mysqli->query("INSERT INTO categorias (categoria) VALUES ('$categoria')");

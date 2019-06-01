@@ -2,14 +2,14 @@
 check_user('ver_compra');
 $id = clear($id);
 
-$s = $mysqli->query("SELECT * FROM compra WHERE id = '$id' AND id_cliente = '".$_SESSION['id_cliente']."'");
+$s = $mysqli->query("SELECT * FROM compra WHERE id_compra = '$id' AND id_clientes = '".$_SESSION['id_clientes']."'");
 
 if(mysqli_num_rows($s)>0){
 
-$s = $mysqli->query("SELECT * FROM compra WHERE id = '$id'");
+$s = $mysqli->query("SELECT * FROM compra WHERE id_compra = '$id'");
 $r = mysqli_fetch_array($s);
 
-$sc = $mysqli->query("SELECT * FROM clientes WHERE id = '".$r['id_cliente']."'");
+$sc = $mysqli->query("SELECT * FROM clientes WHERE id_clientes = '".$r['id_clientes']."'");
 $rc = mysqli_fetch_array($sc);
 
 $nombre = $rc['name'];
@@ -18,7 +18,7 @@ $nombre = $rc['name'];
 <div class="container-fluid">
 	<div class="row" style="font-family: 'Orbitron','Arial'; color: black;">
 		<div class="col-md-12">
-<h1>Compra #<span style="color:#08f"><?=$r['id']?></span></h1><br>
+<h1>Compra #<span style="color:#08f"><?=$r['id_compra']?></span></h1><br>
 
 Fecha: <?=fecha($r['fecha'])?><br>
 Monto: <?=number_format($r['monto'])?> <?=$divisa?><br>
@@ -36,7 +36,7 @@ Estado: <?=estado($r['estado'])?><br>
 		$sp = $mysqli->query("SELECT * FROM productos_compra WHERE id_compra = '$id'");
 		while($rp=mysqli_fetch_array($sp)){
 
-			$spro = $mysqli->query("SELECT * FROM productos WHERE id = '".$rp['id_producto']."'");
+			$spro = $mysqli->query("SELECT * FROM productos WHERE id_productos = '".$rp['id_productos']."'");
 			$rpro = mysqli_fetch_array($spro);
 
 			$nombre_producto = $rpro['name'];
@@ -52,7 +52,7 @@ Estado: <?=estado($r['estado'])?><br>
 						<?php
 						if($rpro['descargable']!=""){
 							?>
-							<a href="descargable/<?=$rpro['descargable']?>" download><i class="fa fa-download"></i></a>
+							<a href="recursos/descargable/<?=$rpro['descargable']?>" download><i class="fa fa-download"></i></a>
 							<?php
 						}else{
 							echo "--";
@@ -69,7 +69,7 @@ Estado: <?=estado($r['estado'])?><br>
 <?php
 if(estado($r['estado']) == "Iniciando"){
 	?>
-	<a class="btn btn-primary" href="?p=pagar_compra&id=<?=$r['id']?>">
+	<a class="btn btn-primary" href="?p=pagar_compra&id=<?=$r['id_compra']?>">
 		Pagar
 	</a>
 </div>

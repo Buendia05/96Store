@@ -4,7 +4,7 @@ check_user('carrito');
 
 if(isset($eliminar)){
 	$eliminar = clear($eliminar);
-	$mysqli->query("DELETE FROM carro WHERE id = '$eliminar'");
+	$mysqli->query("DELETE FROM carro WHERE id_carro = '$eliminar'");
 	redir("?p=carrito");
 }
 
@@ -13,7 +13,7 @@ if(isset($id) && isset($modificar)){
 	$id = clear($id);
 	$modificar = clear($modificar);
 
-	$mysqli->query("UPDATE carro SET cant = '$modificar' WHERE id = '$id'");
+	$mysqli->query("UPDATE carro SET cant = '$modificar' WHERE id_carro = '$id'");
 	alert("Cantidad modificada");
 	redir("?p=carrito");
 
@@ -24,28 +24,28 @@ if(isset($finalizar)){
 
 	$monto = clear($monto_total);
 
-	$id_cliente = clear($_SESSION['id_cliente']);
-	$q = $mysqli->query("INSERT INTO compra (id_cliente,fecha,monto,estado) VALUES ('$id_cliente',NOW(),'$monto',0)");
+	$id_clientes = clear($_SESSION['id_clientes']);
+	$q = $mysqli->query("INSERT INTO compra (id_clientes,fecha,monto,estado) VALUES ('$id_clientes',NOW(),'$monto',0)");
 
-	$sc = $mysqli->query("SELECT * FROM compra WHERE id_cliente = '$id_cliente' ORDER BY id DESC LIMIT 1");
+	$sc = $mysqli->query("SELECT * FROM compra WHERE id_clientes = '$id_clientes' ORDER BY id_compra DESC LIMIT 1");
 	$rc = mysqli_fetch_array($sc);
 
-	$ultima_compra = $rc['id'];
+	$ultima_compra = $rc['id_compra'];
 
 
-	$q2 = $mysqli->query("SELECT * FROM carro WHERE id_cliente = '$id_cliente'");
+	$q2 = $mysqli->query("SELECT * FROM carro WHERE id_clientes = '$id_clientes'");
 	while($r2=mysqli_fetch_array($q2)){
 
-		$sp = $mysqli->query("SELECT * FROM productos WHERE id = '".$r2['id_producto']."'");
+		$sp = $mysqli->query("SELECT * FROM productos WHERE id_productos = '".$r2['id_productos']."'");
 		$rp = mysqli_fetch_array($sp);
 
 		$monto = $rp['price'];
 
-		$mysqli->query("INSERT INTO productos_compra (id_compra,id_producto,cantidad,monto) VALUES ('$ultima_compra','".$r2['id_producto']."','".$r2['cant']."','$monto')");
+		$mysqli->query("INSERT INTO productos_compra (id_compra,id_productos,cantidad,monto) VALUES ('$ultima_compra','".$r2['id_productos']."','".$r2['cant']."','$monto')");
 
 	}
 
-	$mysqli->query("DELETE FROM carro WHERE id_cliente = '$id_cliente'");
+	$mysqli->query("DELETE FROM carro WHERE id_clientes = '$id_clientes'");
 	alert("Se ha finalizado la compra");
 	redir("./");
 
@@ -67,11 +67,11 @@ if(isset($finalizar)){
 		<th>Action</th>
 	</tr>
 <?php
-$id_cliente = clear($_SESSION['id_cliente']);
-$q = $mysqli->query("SELECT * FROM carro WHERE id_cliente = '$id_cliente'");
+$id_clientes = clear($_SESSION['id_clientes']);
+$q = $mysqli->query("SELECT * FROM carro WHERE id_clientes = '$id_clientes'");
 $monto_total = 0;
 while($r = mysqli_fetch_array($q)){
-	$q2 = $mysqli->query("SELECT * FROM productos WHERE id = '".$r['id_producto']."'");
+	$q2 = $mysqli->query("SELECT * FROM productos WHERE id_productos = '".$r['id_productos']."'");
 	$r2 = mysqli_fetch_array($q2);
 
 	$preciototal = 0;
@@ -101,7 +101,7 @@ while($r = mysqli_fetch_array($q)){
 
 	?>
 		<tr>
-			<td><img src="productos/<?=$imagen_producto?>" class="imagen_carro"/></td>
+			<td><img src="recursos/productos/<?=$imagen_producto?>" class="imagen_carro"/></td>
 			<td><?=$nombre_producto?></td>
 			<td><?=$cantidad?></td>
 			<td><?=$precio_unidad?> <?=$divisa?></td>
@@ -117,8 +117,8 @@ while($r = mysqli_fetch_array($q)){
 			<td><?=$preciototal?> <?=$divisa?></td>
 			<td><?=$precio_total?> <?=$divisa?></td>
 			<td>
-				<a onclick="modificar('<?=$r['id']?>')" href="#"><i class="fa fa-edit" title="Modificar cantidad en carrito"></i></a>
-				<a href="?p=carrito&eliminar=<?=$r['id']?>"><i class="fa fa-times" title="Eliminar"></i></a>
+				<a onclick="modificar('<?=$r['id_carro']?>')" href="#"><i class="fa fa-edit" title="Modificar cantidad en carrito"></i></a>
+				<a href="?p=carrito&eliminar=<?=$r['id_carro']?>"><i class="fa fa-times" title="Eliminar"></i></a>
 			</td>
 		</tr>
 	<?php

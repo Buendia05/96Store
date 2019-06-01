@@ -1,14 +1,14 @@
 <?php
 check_admin();
 $id = clear($id);
-$s = $mysqli->query("SELECT * FROM compra WHERE id = '$id'");
+$s = $mysqli->query("SELECT * FROM compra WHERE id_compra = '$id'");
 $r = mysqli_fetch_array($s);
 
 if(isset($modificar)){
 
 	$estado = clear($estado);
 
-	$mysqli->query("UPDATE compra SET estado = '$estado' WHERE id = '$id'");
+	$mysqli->query("UPDATE compra SET estado = '$estado' WHERE id_compra = '$id'");
 	redir("?p=manejar_tracking");
 
 }

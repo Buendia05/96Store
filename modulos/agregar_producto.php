@@ -11,20 +11,20 @@ if(isset($enviar)){
 
 	if(is_uploaded_file($_FILES['imagen']['tmp_name'])){
 		$imagen = $name.rand(0,1000).".png";
-		move_uploaded_file($_FILES['imagen']['tmp_name'], "../recursos/productos/".$imagen);
+		move_uploaded_file($_FILES['imagen']['tmp_name'], "recursos/productos/".$imagen);
 	}
 	if(is_uploaded_file($_FILES['descargable']['tmp_name'])){
 		$descargable = rand(0,1000).$_FILES['descargable']['name'];
-		move_uploaded_file($_FILES['descargable']['tmp_name'], "../recursos/descargable/".$descargable);
+		move_uploaded_file($_FILES['descargable']['tmp_name'], "recursos/descargable/".$descargable);
 	}
 
-	$mysqli->query("INSERT INTO productos (name,price,imagen,oferta,descargable) VALUES ('$name','$price','$imagen','ferta','$descargable')");
+	$mysqli->query("INSERT INTO productos (name,price,imagen,oferta,descargable) VALUES ('$name','$price','$imagen','$oferta','$descargable')");
 	alert("Producto agregado");
 	redir("?p=agregar_producto");
 }
 
 if(isset($eliminar)){
-	$mysqli->query("DELETE FROM productos WHERE id = '$eliminar'");
+	$mysqli->query("DELETE FROM productos WHERE id_productos = '$eliminar'");
 	redir("?p=agregar_producto");
 }
 
@@ -126,7 +126,7 @@ if(isset($eliminar)){
 	</tr>
 
 	<?php
-		$prod = $mysqli->query("SELECT * FROM productos ORDER BY id DESC");
+		$prod = $mysqli->query("SELECT * FROM productos ORDER BY id_productos DESC");
 		while($rp=mysqli_fetch_array($prod)){
 			$preciototal = 0;
 
@@ -169,13 +169,13 @@ if(isset($eliminar)){
 
 					<td><?=$preciototal?></td>
 
-					<td><img src="productos/<?=$rp['imagen']?>" class="imagen_carro"/></td>
+					<td><img src="recursos/productos/<?=$rp['imagen']?>" class="imagen_carro"/></td>
 					<td><?=$categoria?></td>
 					<td>
 
-						<a href="?p=modificar_producto&id=<?=$rp['id']?>"><i class="fa fa-edit"></i></a>
+						<a href="?p=modificar_producto&id=<?=$rp['id_productos']?>"><i class="fa fa-edit"></i></a>
 						&nbsp;
-						<a href="?p=agregar_producto&eliminar=<?=$rp['id']?>"><i class="fa fa-times"></i></a>
+						<a href="?p=agregar_producto&eliminar=<?=$rp['id_productos']?>"><i class="fa fa-times"></i></a>
 
 					</td>
 				</tr>

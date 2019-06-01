@@ -3,7 +3,7 @@ check_admin();
 
 $id = clear($id);
 
-$q = $mysqli->query("SELECT * FROM productos WHERE id = '$id'");
+$q = $mysqli->query("SELECT * FROM productos WHERE id_productos = '$id'");
 $rq = mysqli_fetch_array($q);
 
 if(isset($enviar)){
@@ -13,7 +13,7 @@ if(isset($enviar)){
 	$categoria = clear($categoria);
 	$oferta = clear($oferta);
 
-	$mysqli->query("UPDATE productos SET name = '$name',price = '$price',id_categoria = '$categoria', oferta = '$oferta' WHERE id = '$idpro'");
+	$mysqli->query("UPDATE productos SET name = '$name',price = '$price',id_categoria = '$categoria', oferta = '$oferta' WHERE id_productos = '$idpro'");
 	redir("?p=agregar_producto");
 
 }
