@@ -52,6 +52,35 @@ if(!isset($p)){
 			background-color: red;
 			height: 100px;
 		}
+		.carritot{
+			background: #ff8800;
+			color: white;
+			padding: 10px;
+			border-radius: 4px 4px 0px 0px;
+			position: fixed;
+			width: 300px;
+			right: 0px;
+			bottom: 0px;
+			cursor:pointer;
+		}
+		.carritob{
+			background: #fff;
+			color: #333;
+			padding: 10px;
+			width: 300px;
+			position: fixed;
+			height: 350px;
+			bottom: -350px;
+			right: 0px;
+			overflow-y: scroll;
+		}
+		.cant{
+			width: 50px;
+			height: 35px;
+			display: inline-block;
+			padding: 5px;
+
+		}
 /*menu de navegacion*/
 *{
 	padding: 0;
@@ -123,6 +152,7 @@ header nav ul li .children li a{
 	display: block;
 }
 @media (max-width: 992px){
+
 	body{
 		padding-top: 80px;
 	}
@@ -347,6 +377,7 @@ header nav ul li .children li a{
 		.bloqueoculto{
 			margin-top: 30px;
 		}
+
 }
 @media (min-width:992px) and (max-width:1200px){
 		.bloquecentro{
@@ -382,6 +413,23 @@ header nav ul li .children li a{
 }
 
 	</style>
+	<script type="text/javascript">
+		function minimizer(){
+			var minimized = $("#minimized").val();
+			if (minimized ==0) {
+				//mostrar
+				$(".carritot").css("bottom","350px");
+				$(".carritob").css("bottom","0px");
+				$("#minimized").val('1');
+			}
+			else {
+				//minimized
+				$(".carritot").css("bottom","0px");
+				$(".carritob").css("bottom","-350px");
+				$("#minimized").val('0');
+			}
+		}
+	</script>
 	<title>96 Store</title>
 </head>
 <body>
@@ -556,6 +604,69 @@ header nav ul li .children li a{
 	</div>
 </div>
 </div>
+<!--mini carrito-->
+<div class="carritot" onclick="minimizer()" style="font-family: 'Orbitron','Arial';">
+	Carrito de Compra
+	<input type="hidden" id="minimized" value="0"/>
+</div>
+<div class="carritob">
+	<table class="table table-striped" style="font-family: 'Orbitron','Arial'; background-color: gray;">
+		<tr>
+			<th>Nombre del producto</th>
+			<th>Cantidad</th>
+			<th>Precio</th>
+		</tr>
+	<?php
+	$id_cliente = clear($_SESSION['id_cliente']);
+	$q = $mysqli->query("SELECT * FROM carro WHERE id_cliente = '$id_cliente'");
+	$monto_total = 0;
+	while($r = mysqli_fetch_array($q)){
+		$q2 = $mysqli->query("SELECT * FROM productos WHERE id = '".$r['id_producto']."'");
+		$r2 = mysqli_fetch_array($q2);
+
+		$preciototal = 0;
+				if($r2['oferta']>0){
+					if(strlen($r2['oferta'])==1){
+						$desc = "0.0".$r2['oferta'];
+					}else{
+						$desc = "0.".$r2['oferta'];
+					}
+
+					$preciototal = $r2['price'] -($r2['price'] * $desc);
+				}else{
+					$preciototal = $r2['price'];
+				}
+
+		$nombre_producto = $r2['name'];
+
+		$cantidad = $r['cant'];
+
+		$precio_unidad = $r2['price'];
+		$precio_total = $cantidad * $preciototal;
+		$imagen_producto = $r2['imagen'];
+
+		$monto_total = $monto_total + $precio_total;
+
+		?>
+			<tr>
+				<td><?=$nombre_producto?></td>
+				<td><?=$cantidad?></td>
+				<td><?=$precio_unidad?> <?=$divisa?></td>
+			</tr>
+		<?php
+	}
+	?>
+	</table>
+	<br>
+	<span style="font-family: 'Orbitron','Arial';">Monto Total: <b class="text-green" style="font-family: 'Orbitron','Arial';"><?=$monto_total?> <?=$divisa?></b></span>
+
+	<br><br>
+	<form method="post" action="?p=carrito" style="font-family: 'Orbitron','Arial';">
+		<input type="hidden" name="monto_total" value="<?=$monto_total?>"/>
+		<button class="btn btn-primary" type="submit" name="finalizar"><i class="fa fa-check"></i> Finalizar Compra</button>
+	</form>
+</div>
+
 <!-- footer -->
 	<div class="footer3 col-xs-12 col-sm -12 col-md-12 col-lg-12" style="margin-top: 20px; height: 150px;">
 	<div class="row">

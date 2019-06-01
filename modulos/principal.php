@@ -1,3 +1,4 @@
+
 <style>
 @media print *{
 	*{
@@ -126,7 +127,7 @@ while($r=mysqli_fetch_array($q)){
 				$preciototal = $r['price'];
 			}
 	?>
-		<div class="producto" style="font-family: 'Orbitron','Arial'; color:#fff; font-size: 3.5vw;">
+		<div class="producto" style="font-family: 'Orbitron','Arial'; color:#fff; ">
 			<div class="name_producto" style="font-size: 2vw;"><?=$r['name']?></div>
 			<div><img class="img_producto" style="width: 100%; height:100%;" src="productos/<?=$r['imagen']?>"/></div>
 			<?php
@@ -140,8 +141,8 @@ while($r=mysqli_fetch_array($q)){
 				<?php
 			}
 			?>
-
-			<button class="btn btn-warning pull-right" onclick="agregar_carro('<?=$r['id']?>');"><i class="fa fa-shopping-cart"></i></button>
+			<button class="btn btn-warning pull-right" onclick="agregar_carro('<?=$r['id']?>');" style="border-radius: 0px 4px 0px 4px;"><i class="fa fa-shopping-cart"></i></button>
+			<input type="number" name="cant" id="cant" class="cant pull-right" value="1"/>
 		</div>
 	<?php
 }
@@ -165,9 +166,11 @@ while($r=mysqli_fetch_array($q)){
 	?>
 		<div class="producto" style="font-family: 'Orbitron','Arial'; color:#fff; font-size: 3.5vw;">
 			<div class="name_producto" style="font-size: 2vw;"><?=$r['name']?></div>
-			<div><img class="img_producto" style="width: 100%; height:100%;" src="productos/<?=$r['imagen']?>"/></div><br>
+			<div><img class="img_producto" style="width: 100%; height:100%;" src="recursos/productos/<?=$r['imagen']?>"/></div><br>
 			<del><?=$r['price']?> <?=$divisa?></del> <span class="precio"> <?=$preciototal?> <?=$divisa?> </span>
-			<button class="btn btn-warning pull-right" onclick="agregar_carro('<?=$r['id']?>');"><i class="fa fa-shopping-cart"></i></button>
+			<button class="btn btn-warning pull-right" onclick="agregar_carro('<?=$r['id']?>');" ><i class="fa fa-shopping-cart"></i></button>
+			&nbsp;&nbsp;
+			<input type="number" name="cant" id="cant<?=$r['id']?>" class="cant pull-right" value="1">
 		</div>
 	<?php
 }
@@ -179,7 +182,7 @@ while($r=mysqli_fetch_array($q)){
 <script type="text/javascript">
 
 	function agregar_carro(idp){
-		var cant = prompt("¿Que cantidad desea agregar?",1);
+		cant = $("#cant"+idp).val();
 		if(cant.length>0){
 			window.location="?p=principal&agregar="+idp+"&cant="+cant;
 		}
