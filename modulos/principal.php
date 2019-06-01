@@ -109,8 +109,9 @@ if(isset($agregar) && isset($cant)){
 	redir("?p=principal");
 }
 ?>
+
 <div class="container-fluid">
-  <div class="row" style="font-family: 'Orbitron','Arial'; color: #fff;">
+	<center>
 <h1 style="font-family: 'Orbitron','Arial'; color:#fff; font-size: 2.5vw;">Ultimos 3 Productos Agregados</h1><br><br>
 <?php
 $q = $mysqli->query("SELECT * FROM productos WHERE oferta = 0 ORDER BY id_productos DESC LIMIT 3");
@@ -141,14 +142,11 @@ while($r=mysqli_fetch_array($q)){
 				<?php
 			}
 			?>
-			<button class="btn btn-warning pull-right" onclick="agregar_carro('<?=$r['id_carro']?>');" style="border-radius: 0px 4px 0px 4px;"><i class="fa fa-shopping-cart"></i></button>
-			<input type="number" name="cant" id="cant" class="cant pull-right" value="1"/>
-		</div>
+	</div>
 	<?php
 }
 ?>
 <h1 style="font-family: 'Orbitron','Arial'; color:#fff; font-size: 2.5vw;">Ultimas 3 Ofertas Agregadas</h1><br><br>
-
 <?php
 	$q = $mysqli->query("SELECT * FROM productos WHERE oferta>0 ORDER BY id_productos DESC LIMIT 3");
 	while($r=mysqli_fetch_array($q)){
@@ -164,14 +162,13 @@ while($r=mysqli_fetch_array($q)){
 				$preciototal = $r['price'];
 			}
 	?>
-		<div class="producto" style="font-family: 'Orbitron','Arial'; color:#fff; font-size: 3.5vw;">
+		<div class="producto" style="font-family: 'Orbitron','Arial'; color:#fff;">
 			<div class="name_producto" style="font-size: 2vw;"><?=$r['name']?></div>
 			<div><img class="img_producto" style="width: 100%; height:100%;" src="recursos/productos/<?=$r['imagen']?>"/></div><br>
 			<del><?=$r['price']?> <?=$divisa?></del> <span class="precio"> <?=$preciototal?> <?=$divisa?> </span>
-			<button class="btn btn-warning pull-right" onclick="agregar_carro('<?=$r['id_carro']?>');" ><i class="fa fa-shopping-cart"></i></button>
-			&nbsp;&nbsp;
-			<input type="number" name="cant" id="cant<?=$r['id_carro']?>" class="cant pull-right" value="1">
 		</div>
+	</center>
+</div>
 	<?php
 }
 ?>

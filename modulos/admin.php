@@ -31,17 +31,57 @@ if(isset($enviar)){
 
 if(isset($_SESSION['id_admins'])){ // si hay una sesion iniciada
 	?>
-	<a href="?p=agregar_producto" style="font-family: 'Orbitron','Arial'; color: #fff;">
-		<button class="btn btn-primary"><i class="fa fa-plus-circle"></i> Agregar Productos</button></a>
+	<div class="container-fluid" style="font-family: 'Orbitron','Arial'; color: #fff;">
+		<h1>Administracion</h1>
+		<br>
+		<div class="row">
+		<div class="col-xs-12 col-lg-2" style="float: center;">
+			<a href="?p=frm_admin" style="font-family: 'Orbitron','Arial'; color: #fff;">
+			<button class="btn btn-warning"><i class="fa fa-plus-circle"></i> Administrador</button></a>
+		</div>
 
-		<a href="?p=agregar_categoria" style="font-family: 'Orbitron','Arial'; color: #fff;">
-		<button class="btn btn-info"><i class="fa fa-plus-circle"></i> Agregar Categoria</button></a>
+		<div class="col-xs-12 col-lg-2" style="float: left;">
+			<a  href="?p=agregar_producto" style=" font-family: 'Orbitron','Arial'; color: #fff;">
+			<button class="btn btn-warning"><i class="fa fa-plus-circle"></i> Productos</button></a>
+		</div>
 
-		<a href="?p=manejar_tracking" style="font-family: 'Orbitron','Arial'; color: #fff;">
-		<button class="btn btn-warning"><i class="fa fa-plus-circle"></i> Manejar Tracking</button></a>
+		<div class="col-xs-12 col-lg-2" style="float: center;">
+			<a href="?p=agregar_categoria" style="font-family: 'Orbitron','Arial'; color: #fff;">
+			<button class="btn btn-warning"><i class="fa fa-plus-circle"></i> Categoria</button></a>
+		</div>
 
+		<div class="col-xs-12 col-lg-2" style="float: center;">
+			<a href="?p=manejar_tracking" style="font-family: 'Orbitron','Arial'; color: #fff;">
+			<button class="btn btn-warning"><i class="fa fa-plus-circle"></i> Tracking</button></a>
+		</div>
+
+		<div class="col-xs-12 col-lg-2" style="float: center;">
+			<a href="?p=pagos" style="font-family: 'Orbitron','Arial'; color: #fff;">
+			<button class="btn btn-warning"><i class="fa fa-plus-circle"></i> Pagos</button></a>
+		</div>
+
+</div>
+
+<hr>
+<h1>Reportes</h1>
+<br>
+<div class="row">
+	<div class="col-xs-12 col-lg-4" style="float: center;">
 		<a href="?p=pagos" style="font-family: 'Orbitron','Arial'; color: #fff;">
-		<button class="btn btn-warning"><i class="fa fa-plus-circle"></i> Manejar Pagos</button></a>
+		<button class="btn btn-warning"><i class="fa fa-plus-circle"></i> Reporte de Ventas</button></a>
+	</div>
+
+	<div class="col-xs-12 col-lg-4" style="float: center;">
+		<a href="?p=pagos" style="font-family: 'Orbitron','Arial'; color: #fff;">
+		<button class="btn btn-warning"><i class="fa fa-plus-circle"></i> Reporte de Ventas</button></a>
+	</div>
+
+	<div class="col-xs-12 col-lg-4" style="float: center;">
+		<a href="?p=pagos" style="font-family: 'Orbitron','Arial'; color: #fff;">
+		<button class="btn btn-warning"><i class="fa fa-plus-circle"></i> Reporte de Clientes</button></a>
+	</div>
+</div>
+</div>
 	<?php
 }else{ // si no hay una sesion iniciada
 	?>
@@ -58,7 +98,6 @@ if(isset($_SESSION['id_admins'])){ // si hay una sesion iniciada
 
 				<div class="form-group">
 					<input type="password" class="form-control" placeholder="Contraseña" name="password"/>
-					<h4><a href="?p=frm_admin">Registrate</a></h4>
 					<br>
 				</div>
 

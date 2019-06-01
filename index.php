@@ -535,17 +535,21 @@ header nav ul li .children li a{
 						<?php
 							if(isset($_SESSION['id_admins'])){
 						?>
-
+						<div class="col-md-6" style="float: center;">
+						<a class="pull-right subir icon-users" href="?p=admin" style="color:lightgreen;"><p style="font-family: 'Orbitron';"><?=nombre_admins($_SESSION['id_admins'])?></p></a>
+						</div>
+						<div class="col-md-6" style="float: center;">
 						<a class="pull-right subir icon-exit" href="?p=salir" style="color:lightgreen;"><p style="font-family: 'Orbitron';">Salir</p></a>
-						<a class="pull-right subir icon-users" href="#" style="color:lightgreen;"><p style="font-family: 'Orbitron';"><?=nombre_admins($_SESSION['id_admins'])?></p></a>
-
+						</div>
 						<?php
 							}
 							else if(isset($_SESSION['id_clientes'])){
 								?>
-
+								<div class="col-md-6" style="float: center;">
+								<a class="pull-right subir icon-users" href="?p=miscompras" style="color:white;"><p style="font-family: 'Orbitron';"><?=nombre_cliente($_SESSION['id_clientes'])?></p></a>
+								</div>
+								<div class="col-md-6" style="float: center;">
 								<a class="pull-right subir icon-exit" href="?p=salir" style="color:white;"><p style="font-family: 'Orbitron';">Salir</p></a>
-								<a class="pull-right subir icon-users" href="#" style="color:white;"><p style="font-family: 'Orbitron';"><?=nombre_cliente($_SESSION['id_clientes'])?></p></a>
 								</div>
 							<?php
 							}
@@ -563,8 +567,6 @@ header nav ul li .children li a{
 	<div class="barra1">
     <hr>
 		<a class="lis" href="?p=admin">Mantenimiento</a>
-		<br>
-		<a class="lis" href="?p=frm_admin">Registro Admin</a>
     <hr>
 		<a class="lis" href="?p=productos">Explorar Categorias</a>
 		<br>
@@ -606,7 +608,9 @@ header nav ul li .children li a{
 </div>
 <!--mini carrito-->
 <div class="carritot" onclick="minimizer()" style="font-family: 'Orbitron','Arial';">
-	Carrito de Compra
+	<span class="cart icon-shopcart float-right" style="color: #fff;">
+		<a href="?p=carrito" style="font-family: 'Orbitron'; font-size: 10px; color: #fff;"> Carrito de Compra</a>
+	</span>
 	<input type="hidden" id="minimized" value="0"/>
 </div>
 <div class="carritob">
@@ -663,7 +667,7 @@ header nav ul li .children li a{
 	<br><br>
 	<form method="post" action="?p=carrito" style="font-family: 'Orbitron','Arial';">
 		<input type="hidden" name="monto_total" value="<?=$monto_total?>"/>
-		<button class="btn btn-primary" type="submit" name="finalizar"><i class="fa fa-check"></i> Finalizar Compra</button>
+		<a href="?p=carrito" class="btn btn-primary" type="button" name="finalizar"><i class="fa fa-check"></i> Ir al Carro</a>
 	</form>
 </div>
 
