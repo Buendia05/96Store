@@ -54,10 +54,10 @@ function check_user($url){
 
 }
 
-function nombre_cliente($id_clientes){
+function nombre_cliente(){
 	$mysqli = connect();
 
-	$q = $mysqli->query("SELECT * FROM clientes WHERE id_clientes = '$id_clientes'");
+	$q = $mysqli->query("SELECT clientes.name FROM clientes");
 	$r = mysqli_fetch_array($q);
 	return $r['name'];
 }
@@ -104,7 +104,7 @@ function estado($id_estado){
 		}elseif($id_estado==1){
 			$status = "Preparando";
 		}elseif($id_estado == 2){
-			$status = "Despachando";
+			$status = "Denegado";
 		}elseif($id_estado == 3){
 			$status = "Finalizado";
 		}else{

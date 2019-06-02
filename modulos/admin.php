@@ -9,21 +9,11 @@ if(isset($enviar)){
 	if(mysqli_num_rows($q)>0){
 		$r = mysqli_fetch_array($q);
 		$_SESSION['id_admins'] = $r['id_admins'];
-		echo "
-			<script>
-				Swal.fire(
-				'Good job!',
-				'You clicked the button!',
-				'success'
-
-			);
-
-			</script>
-		";
-		redir("?p=admin");
+		alert("¡Bienvenido!",1,'admin');
+		//redir("?p=admin");
 	}else{
-		alert("Los datos no son validos");
-		redir("?p=admin");
+		alert("Los datos no son validos",0,'admin');
+		//redir("?p=admin");
 	}
 
 

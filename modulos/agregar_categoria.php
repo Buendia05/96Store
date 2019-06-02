@@ -7,12 +7,13 @@ if(isset($enviar)){
 	$s = $mysqli->query("SELECT * FROM categorias WHERE categoria = '$categoria'");
 
 	if(mysqli_num_rows($s)>0){
-		alert("Esta categoria esta agregada a la base de datos");
-		redir("");
-	}else{
+		alert("Esta categoria esta agregada a la base de datos",2,'agregar_categoria');
+		//redir("");
+	}
+	else{
 		$mysqli->query("INSERT INTO categorias (categoria) VALUES ('$categoria')");
-		alert("Categoria Agregada");
-		redir("");
+		alert("Categoria Agregada",1,'agregar_categoria');
+		//redir("");
 	}
 
 }
@@ -20,9 +21,15 @@ if(isset($enviar)){
 if(isset($eliminar)){
 	$eliminar = clear($eliminar);
 	$mysqli->query("DELETE FROM categorias WHERE id_categoria = '$eliminar'");
-	alert("Categoria eliminada");
-	redir("?p=agregar_categoria");
+	alert("Categoria eliminada",0,'agregar_categoria');
+	//redir("?p=agregar_categoria");
 }
+//if (isset(["enviar"])) {
+	//if (["categoria"]=='null') {
+		//alert("introduzca datos",0,'agregar_categoria');
+	//}
+
+//}
 
 ?>
 
@@ -30,11 +37,11 @@ if(isset($eliminar)){
 <br><br>
 <form method="post" action="" style="font-family: 'Orbitron','Arial'; color: #fff;">
 	<div class="form-group">
-		<input type="text" class="form-control" name="categoria" placeholder="Categoria"/>
+		<input type="text" class="form-control" required="true" name="categoria" placeholder="Categoria"/>
 	</div>
 
 	<div class="form-group">
-		<input type="submit" class="btn btn-primary" name="enviar" value="Agregar categoria"/>
+		<input type="submit" class="btn btn-primary" id="enviar" name="enviar" value="Agregar categoria"/>
 	</div>
 </form><br>
 

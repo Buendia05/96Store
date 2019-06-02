@@ -7,7 +7,7 @@ if(isset($cat)){
 	$sc = $mysqli->query("SELECT * FROM categorias WHERE id_categoria = '$cat'");
 	$rc = mysqli_fetch_array($sc);
 	?>
-
+	<small style="font-family: 'Orbitron','Arial'; color:#fff;">Categoria Filtrada por: <?=$rc['categoria']?></small>
 <br>
 	<?php
 }
@@ -30,8 +30,8 @@ if(isset($agregar) && isset($cant)){
 
 	}
 
-	alert("Se ha agregado al carro de compras");
-	redir("?p=productos");
+	alert("Se ha agregado al carro de compras",1,'productos');
+	//redir("?p=productos");
 }
 
 if(isset($busq) && isset($cat)){
@@ -50,8 +50,6 @@ if(isset($busq) && isset($cat)){
 	<form method="post" action="" style="font-family: 'Orbitron','Arial'; color:#fff;">
 		<h1 style="font-family: 'Orbitron','Arial'; color:#fff;">Busqueda de Juegos <span class="icon-search"></span> </h1>
 		<br>
-		<small style="font-family: 'Orbitron','Arial'; color:#fff;">Categoria Filtrada por: <?=$rc['categoria']?></small>
-<br>
 <br>
 		<div class="row">
 			<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
