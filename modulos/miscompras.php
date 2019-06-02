@@ -23,7 +23,7 @@ if(mysqli_num_rows($s)>0){
 			<td><?=number_format($r['monto'])?> <?=$divisa?></td>
 			<td><?=estado($r['estado'])?></td>
 			<td>
-				<a href="?p=ver_compra&id=<?=$r['id_compra']?>">
+				<a href="?p=ver_compra&id_compra=<?=$r['id_compra']?>">
 					<i class="fa fa-eye" style="color:#fff;"></i>
 				</a>
 				<?php

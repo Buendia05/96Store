@@ -1,6 +1,6 @@
 <?php
 check_user('ver_compra');
-$id = clear($id);
+$id = clear($id_compra);
 
 $s = $mysqli->query("SELECT * FROM compra WHERE id_compra = '$id' AND id_clientes = '".$_SESSION['id_clientes']."'");
 
@@ -33,7 +33,7 @@ Estado: <?=estado($r['estado'])?><br>
 		<th>Acciones</th>
 	</tr>
 	<?php
-		$sp = $mysqli->query("SELECT * FROM productos_compra WHERE id_compra = '$id'");
+		$sp = $mysqli->query("SELECT * FROM productos_compra WHERE id_productos = '$id'");
 		while($rp=mysqli_fetch_array($sp)){
 
 			$spro = $mysqli->query("SELECT * FROM productos WHERE id_productos = '".$rp['id_productos']."'");

@@ -29,12 +29,20 @@ function redir($var){
 	die();
 }
 
-function alert($var){
-	?>
-	<script type="text/javascript">
-		alert("<?=$var?>");
-	</script>
-	<?php
+function alert($txt,$type,$url){
+	//"error", "success" and "info".
+	if($type==0){
+		$t = "error";
+	}elseif($type==1){
+		$t = "success";
+	}elseif($type==2){
+		$t = "info";
+	}else{
+		$t = "info";
+	}
+	echo '<script>swal({ title: "Alerta", text: "'.$txt.'", icon: "'.$t.'"});';
+	echo '$(".swal-button").click(function(){ window.location="?p='.$url.'"; });';
+	echo '</script>';
 }
 
 function check_user($url){

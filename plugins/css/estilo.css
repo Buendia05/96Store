@@ -100,3 +100,8 @@
 .text-green{
 	color:#0a0;
 }
+.cant{
+	width:50px;
+	display:inline-block;
+	padding:5px;
+}

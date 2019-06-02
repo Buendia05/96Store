@@ -14,10 +14,8 @@ if(isset($id) && isset($modificar)){
 	$modificar = clear($modificar);
 
 	$mysqli->query("UPDATE carro SET cant = '$modificar' WHERE id_carro = '$id'");
-	alert("Cantidad modificada");
-	redir("?p=carrito");
-
-
+	alert("Cantidad modificada",1,'carrito');
+	//redir("?p=carrito");
 }
 
 if(isset($finalizar)){
@@ -45,9 +43,12 @@ if(isset($finalizar)){
 
 	}
 
-	$mysqli->query("DELETE FROM carro WHERE id_clientes = '$id_clientes'");
-	alert("Se ha finalizado la compra");
-	redir("./");
+
+
+	$id_compra = $rc['id_compra'];
+
+	alert("Se ha finalizado la compra",1,'ver_compra&id_compra='.$id_compra);
+	//redir("?p=ver_compra&id=".$id_compra);;
 
 }
 ?>
