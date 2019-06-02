@@ -1,9 +1,9 @@
 	<div class="container-fluid">
-		<div class="row" style="margin-bottom: 50px; padding: 40px;">
+		<div class="row" style="margin-bottom: 0px; padding: 0px 20px 0px 0px;">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			<!-- slide destacados -->
 <div class="contenedorslider1 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-  <h2 style="font-family: 'Orbitron'; color: white; font-size: 25px;">DESTACADOS</h2>
+  <h2 style="font-family: 'Orbitron'; color: white; font-size: 25px;">DESTACADOS</h2><br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -48,9 +48,9 @@
 </div>
 
 <!-- contenedor gameplay -->
-	<div class="row" style="margin-bottom: 50px; padding: 40px;">
-		<h2 style="font-family: 'Orbitron'; color: white; font-size:25px;">GAMEPLAYS
-		</h2>
+	<div class="row" style="margin-bottom: 0px; padding: 10px 20px 0px 20px;">
+		<h2 style="font-family: 'Orbitron'; color: white; font-size:25px; margin-left: 20px;">GAMEPLAYS
+		</h2><br>
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 70px;" id="cp_widget_81567dbd-9e96-47d2-979b-fe76d768dcef">
 		</div>
 		<script type="text/javascript">
