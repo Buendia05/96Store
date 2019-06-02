@@ -105,8 +105,8 @@ if(isset($agregar) && isset($cant)){
 	}else{
 		$q = $mysqli->query("INSERT INTO carro (id_clientes,id_productos,cant) VALUES ($id_clientes,$idp,$cant)");
 	}
-	alert("Se ha agregado al carro de compras");
-	redir("?p=principal");
+	alert("Se ha agregado al carro de compras",1,'principal');
+	//redir("?p=principal");
 }
 ?>
 

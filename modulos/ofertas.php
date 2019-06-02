@@ -40,8 +40,8 @@ if(isset($agregar) && isset($cant)){
 
 	}
 
-	alert("Se ha agregado al carro de compras");
-	redir("?p=productos");
+	alert("Se ha agregado al carro de compras",1,'productos');
+	//redir("?p=productos")
 }
 
 if(isset($cat)){

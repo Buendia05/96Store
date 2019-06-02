@@ -20,8 +20,8 @@ if(isset($enviar)){
 
 		}
 	}else{
-		alert("Los datos no son validos");
-		redir("?p=login");
+		alert("Los datos no son validos",0,'login');
+			//redir("?p=login");
 	}
 
 

@@ -13,8 +13,9 @@ if(isset($subir)){
 
 	$mysqli->query("INSERT INTO pagos (id_clientes,id_compra,comprobante,nombre,fecha) VALUES ('".$_SESSION['id_clientes']."','$id','$comprobante','$nombre',NOW())");
 
-	alert("Comprobante enviado");
-	redir("?p=miscompras");
+	alert("Comprobante enviado",1,'miscompras');
+		//redir("?p=miscompras");
+
 
 }
 ?>
