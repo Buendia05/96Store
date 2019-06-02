@@ -47,7 +47,7 @@ if(isset($busq) && isset($cat)){
 }
 ?>
 
-	<form method="post" action="" style="font-family: 'Orbitron','Arial'; color:#fff;">
+	<form method="post" action="" style="font-family: 'Orbitron','Arial';">
 		<h1 style="font-family: 'Orbitron','Arial'; color:#fff;">Busqueda de Juegos <span class="icon-search"></span> </h1>
 		<br>
 <br>
@@ -89,7 +89,7 @@ while($r=mysqli_fetch_array($q)){
 				$preciototal = $r['price'];
 			}
 	?>
-		<div class="producto" style="font-family: 'Orbitron','Arial'; color:#fff;">
+		<div class="producto" style="font-family: 'Orbitron','Arial';">
 			<center>
 			<div class="name_producto" style="font-size: 1.5vw;"><?=$r['name']?></div>
 			<div><img style="width: 100%; height:100%;"class="img_producto" src="recursos/productos/<?=$r['imagen']?>"/></div>
@@ -104,8 +104,9 @@ while($r=mysqli_fetch_array($q)){
 				<?php
 			}
 			?>
+		<button class="btn btn-warning pull-right" onclick="agregar_carro('<?=$r['id_productos']?>');"><i class="fa fa-shopping-cart"></i></button>
+  	<input type="number" id="cant<?=$r['id_productos']?>" name="cant" class="cant pull-right" value="1"/>
 
-			<button class="btn btn-warning pull-right" onclick="agregar_carro('<?=$r['id_productos']?>');"><i class="fa fa-shopping-cart"></i></button>
 			</center>
 		</div>
 
@@ -116,7 +117,8 @@ while($r=mysqli_fetch_array($q)){
 <script type="text/javascript">
 
 	function agregar_carro(idp){
-		var cant = prompt("¿Que cantidad desea agregar?",1);
+
+		cant = $("#cant"+idp).val();
 
 		if(cant.length>0){
 			window.location="?p=productos&agregar="+idp+"&cant="+cant;
