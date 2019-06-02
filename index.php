@@ -511,7 +511,7 @@ header nav ul li .children li a{
 							<li><a href="?p=noticias"><span></span>NOTICIAS</a></li>
 							<li><a href="?p=reseñas"><span></span>RESEÑAS</a></li>
 							<li><a href="?p=admin"><span></span>Mante</a></li>
-							<li><a href="#"><span></span>APP</a></li>
+							<li><a href="https://mega.nz/#!r1xXnYQQ!zrj3ffxSlnP99Z0IpVQnkO5WjG7f4WhlSh7_DA4pFSw" target="_blank"><span></span>APP</a></li>
 							<li><a href="?p=acercade"><span></span>ACERCA DE</a></li>
 						</ul>
 					</nav>
