@@ -377,6 +377,12 @@ header nav ul li .children li a{
 		.bloqueoculto{
 			margin-top: 30px;
 		}
+		.carritot{
+			display: none;
+		}
+		.carritob{
+			display: none;
+		}
 
 }
 @media (min-width:992px) and (max-width:1200px){
@@ -470,14 +476,14 @@ header nav ul li .children li a{
 								if(isset($_SESSION['id_admins'])){
 							?>
 							<a class="pull-right subir icon-exit" href="?p=salir" style="color:lightgreen;"><span style="font-family: 'Orbitron';">Salir</span></a>
-							<a class="pull-right subir icon-users" href="#" style="color:lightgreen;"><span style="font-family: 'Orbitron';"><?=nombre_admins($_SESSION['id_admins'])?></span></a>
+							<a class="pull-right subir icon-users" href="?p=admin" style="color:lightgreen;"><span style="font-family: 'Orbitron';"><?=nombre_admins($_SESSION['id_admins'])?></span></a>
 
 							<?php
 								}
 								else if(isset($_SESSION['id_clientes'])){
 									?>
 									<a class="pull-right subir icon-exit" href="?p=salir" style="color:white;"><p style="font-family: 'Orbitron';">Salir</p></a>
-									<a class="pull-right subir icon-users" href="#" style="color:white;"><p style="font-family: 'Orbitron';"><?=nombre_cliente($_SESSION['id_clientes'])?></p></a>
+									<a class="pull-right subir icon-users" href="?p=miscompras" style="color:white;"><p style="font-family: 'Orbitron';"><?=nombre_cliente($_SESSION['id_clientes'])?></p></a>
 									</div>
 								<?php
 								}
@@ -609,11 +615,14 @@ header nav ul li .children li a{
 <!--mini carrito-->
 <div class="carritot" onclick="minimizer()" style="font-family: 'Orbitron','Arial';">
 	<span class="cart icon-shopcart float-right" style="color: #fff;">
-		<a href="?p=carrito" style="font-family: 'Orbitron'; font-size: 10px; color: #fff;"> Carrito de Compra</a>
+		<a style="font-family: 'Orbitron'; font-size: 10px; color: #fff;"> Carrito de Compra</a>
 	</span>
 	<input type="hidden" id="minimized" value="0"/>
 </div>
 <div class="carritob">
+	<?php
+if (isset($_SESSION['id_clientes'])) {
+	?>
 	<table class="table table-striped" style="font-family: 'Orbitron','Arial'; background-color: gray;">
 		<tr>
 			<th>Nombre del producto</th>
@@ -669,6 +678,22 @@ header nav ul li .children li a{
 		<input type="hidden" name="monto_total" value="<?=$monto_total?>"/>
 		<a href="?p=carrito" class="btn btn-primary" type="button" name="finalizar"><i class="fa fa-check"></i> Ir al Carro</a>
 	</form>
+	<?php
+}else {
+
+	?>
+	<div class="row">
+		<div class="col-xs-12">
+			<center style="font-family: Orbitron, Arial">
+				Inicia sesión para unirte a nuestra comunidad<br><br>
+				<a href="?p=login"><button class="btn btn-primary">Iniciar sesión</button></a><br><br>
+				o <b><a href="?p=frm_cliente">regístrate</a> y únete a 96Store de forma gratuita</b>
+			</center>
+		</div>
+	</div>
+	<?php
+}
+	?>
 </div>
 
 <!-- footer -->
