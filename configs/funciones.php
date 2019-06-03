@@ -1,11 +1,8 @@
 <?php
-
-
 $host_mysql = "localhost";
 $user_mysql = "root";
 $pass_mysql = "";
 $db_mysql = "tienda";
-
 
 $mysqli = mysqli_connect($host_mysql,$user_mysql,$pass_mysql,$db_mysql);
 
@@ -51,19 +48,16 @@ function check_user($url){
 	}else{
 
 	}
-
 }
 
 function nombre_cliente(){
 	$mysqli = connect();
-
 	$q = $mysqli->query("SELECT clientes.name FROM clientes");
 	$r = mysqli_fetch_array($q);
 	return $r['name'];
 }
 function nombre_admins($id_admins){
 	$mysqli = connect();
-
 	$q = $mysqli->query("SELECT * FROM admins WHERE id_admins = '$id_admins'");
 	$r = mysqli_fetch_array($q);
 	return $r['name'];
@@ -74,10 +68,7 @@ function connect(){
 	$user_mysql = "root";
 	$pass_mysql = "";
 	$db_mysql = "tienda";
-
-
  	$mysqli = mysqli_connect($host_mysql,$user_mysql,$pass_mysql,$db_mysql);
-
 	return $mysqli;
 }
 
@@ -119,12 +110,10 @@ function admin_name_connected(){
 	include "config.php";
 	$id = $_SESSION['id_admins'];
 	$mysqli = connect();
-
 	$q = $mysqli->query("SELECT * FROM admins WHERE id_admins = '$id'");
 	$r = mysqli_fetch_array($q);
 
 	return $r['name'];
-
 }
 
 function estado_pago($estado){
