@@ -1,13 +1,11 @@
 <?php
 include "configs/config.php";
 include "configs/funciones.php";
-
 if(!isset($p)){
 	$p = "principal";
 }else{
 	$p = $p;
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -30,7 +28,7 @@ if(!isset($p)){
 	<!-- slider2  -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css'>
-
+	
 	<!-- sliderfin -->
 	<style type="text/css">
 		.bloqueizquierdo{
