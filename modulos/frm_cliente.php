@@ -8,6 +8,12 @@ if(isset($enviar)){
 	$password = clear($password);
 	$cpassword = clear($cpassword);
 	$nombre = clear($nombre);
+	$apellido = clear($apellido);
+	$fn = clear($fn);
+	$direccion = clear($direccion);
+	$telefono = clear($telefono);
+	$correo = clear($correo);
+
 	$q = $mysqli->query("SELECT * FROM clientes WHERE username = '$username'");
 	if(mysqli_num_rows($q)>0){
 		alert("El usuario ya está en uso",0,'frm_cliente');
@@ -17,7 +23,7 @@ if(isset($enviar)){
 		alert("Las contraseñas no coinciden",0,'frm_cliente');
 		die();
 	}
-	$mysqli->query("INSERT INTO clientes (username,password,name) VALUES ('$username','$password','$nombre')");
+	$mysqli->query("INSERT INTO clientes (username,password,name,apellido,fechaNac,direccion,telefono,correo) VALUES ('$username','$password','$nombre','$apellido','$fn','$direccion','$telefono','$correo')");
 	$q2 = $mysqli->query("SELECT * FROM clientes WHERE username = '$username'");
 	$r = mysqli_fetch_array($q2);
 	$_SESSION['id_clientes'] = $r['id_clientes'];
@@ -48,6 +54,25 @@ if(isset($enviar)){
 
 				<div class="form-group">
 					<input type="text" autocomplete="off" class="form-control" placeholder="Nombre" name="nombre"/>
+				</div>
+
+				<div class="form-group">
+					<input type="text" autocomplete="off" class="form-control" placeholder="Apellido" name="apellido"/>
+				</div>
+
+				<div class="form-group">
+				<input type="date" autocomplete="off" class="form-control" placeholder="Fecha de nacimiento" name="fn" id="fechNac"  required/>
+
+				</div>
+				<div class="form-group">
+					<input type="text" autocomplete="off" class="form-control" placeholder="Direccion" name="direccion"/>
+				</div>
+				<div class="form-group">
+					<input type="text" autocomplete="off" class="form-control" placeholder="Telefono" name="telefono" id="telefono"  name="telefono" required/>
+
+				</div>
+				<div class="form-group">
+					<input type="text" autocomplete="off" class="form-control" placeholder="Correo" name="correo"/>
 				</div>
 
 				<div class="form-group">
