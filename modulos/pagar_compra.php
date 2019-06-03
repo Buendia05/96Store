@@ -35,8 +35,8 @@ if(isset($subir)){
 <tr>
 	<td>Transferencia Bancaria</td>
 	<td>0000-0000-0000-0000</td>
-	<td>Fulanito</td>
-	<th><a target="_blank" href="https://mail.google.com/mail/u/0/#inbox"> Ir al pago </a></th>
+	<td>96Store</td>
+	<th><a target="_blank" href="https://www.paypal.com/ec/signin"> Ir al pago </a></th>
 </tr>
 </table>
 
