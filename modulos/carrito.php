@@ -5,7 +5,8 @@ check_user('carrito');
 if(isset($eliminar)){
 	$eliminar = clear($eliminar);
 	$mysqli->query("DELETE FROM carro WHERE id_carro = '$eliminar'");
-	redir("?p=carrito");
+	alert("Se ha eliminado con exito",1,'carrito');
+	//redir("?p=carrito");
 }
 
 if(isset($id) && isset($modificar)){
@@ -29,8 +30,6 @@ if(isset($finalizar)){
 	$rc = mysqli_fetch_array($sc);
 
 	$ultima_compra = $rc['id_compra'];
-
-
 	$q2 = $mysqli->query("SELECT * FROM carro WHERE id_clientes = '$id_clientes'");
 	while($r2=mysqli_fetch_array($q2)){
 
@@ -43,10 +42,7 @@ if(isset($finalizar)){
 
 	}
 
-
-
 	$id_compra = $rc['id_compra'];
-
 	alert("Se ha finalizado la compra",1,'ver_compra&id_compra='.$id_compra);
 	//redir("?p=ver_compra&id=".$id_compra);;
 

@@ -2,7 +2,7 @@
 include "configs/config.php";
 include "configs/funciones.php";
 if(!isset($p)){
-	$p = "principal";
+	$p = "home";
 }else{
 	$p = $p;
 }
@@ -28,7 +28,7 @@ if(!isset($p)){
 	<!-- slider2  -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css'>
-	
+
 	<!-- sliderfin -->
 	<style type="text/css">
 		.bloqueizquierdo{
@@ -462,7 +462,6 @@ header nav ul li .children li a{
 							<li><a href="?p=reseñas"><span></span>RESEÑAS</a></li>
 							<li><a href="?p=acercade"><span></span>ACERCA DE</a></li>
 							<li><a href="?p=productos"><span></span>Explorar</a></li>
-							<li><a href="?p=admin"><span></span>Mantenimiento</a></li>
 							<br>
 							<li><a href="?p=login" style="font-style: italic;"><span class="icon-users"></span>Iniciar Sesión</a></li>
 							<div style="padding-top:20px;"><?php
@@ -508,7 +507,6 @@ header nav ul li .children li a{
 							<li><a href="?p=productos"><span></span>BIBLIOTECA</a></li>
 							<li><a href="?p=noticias"><span></span>NOTICIAS</a></li>
 							<li><a href="?p=reseñas"><span></span>RESEÑAS</a></li>
-							<li><a href="?p=admin"><span></span>Mante</a></li>
 							<li><a href="https://mega.nz/#!r1xXnYQQ!zrj3ffxSlnP99Z0IpVQnkO5WjG7f4WhlSh7_DA4pFSw" target="_blank"><span></span>APP</a></li>
 							<li><a href="?p=acercade"><span></span>ACERCA DE</a></li>
 						</ul>
@@ -741,7 +739,11 @@ if (!isset($_SESSION['id_clientes'])) {
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-1" style="background-color: red; height: 100px;"></div>
+			<div class="col-xs-1" style="background-color: blue; height: 100px;">
+				<div class="col-xs-12" style="margin-top: 40px;">
+					<a href="?p=admin"><span class="icon-users" style="color: white; font-size: 20px;"><i style="background-color: green; font-family: Orbitron, Arial; font-size: 1vw;"></i></span></a></span>
+				</div>
+			</div>
 		</div>
 	</div>
 
